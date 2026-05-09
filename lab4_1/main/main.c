@@ -37,55 +37,55 @@ static void get_direction (i2c_master_dev_handle_t dev_handle)
 
 	ACCEL_Y = (int16_t)((high_bytes_Y << 8) | low_bytes_Y);
 	ACCEL_X = (int16_t)((high_bytes_X << 8) | low_bytes_X);	
-		if(ACCEL_Y > 50 && ACCEL_X < 50 && ACCEL_X > -50)
+		if(ACCEL_Y > 100 && ACCEL_X < 100 && ACCEL_X > -100)
 	{
-		ESP_LOGI(TAG,"UP y%d", ACCEL_Y);
+		ESP_LOGI(TAG,"UP y %d", ACCEL_Y);
 	};
 	
-	if(ACCEL_Y < -50 && ACCEL_X < 50 && ACCEL_X > -50)
+	if(ACCEL_Y < -100 && ACCEL_X < 100 && ACCEL_X > -100)
 	{
-		ESP_LOGI(TAG,"DOWN y%d", ACCEL_Y);
+		ESP_LOGI(TAG,"DOWN y %d", ACCEL_Y);
 	};
-	if(ACCEL_X > 50 && ACCEL_Y < 50 && ACCEL_Y > -50)
+	if(ACCEL_X > 100 && ACCEL_Y < 100 && ACCEL_Y > -100)
 	{
-	ESP_LOGI(TAG,"LEFT x%d", ACCEL_X);
+	ESP_LOGI(TAG,"LEFT x %d", ACCEL_X);
 	};
-	if(ACCEL_X < -50 && ACCEL_Y <50 && ACCEL_Y > -50)
+	if(ACCEL_X < -100 && ACCEL_Y <100 && ACCEL_Y > -100)
 	{
-		ESP_LOGI(TAG,"RIGHT x%d",ACCEL_X);
+		ESP_LOGI(TAG,"RIGHT x %d",ACCEL_X);
 	};
 
-	if(ACCEL_X > 50 && ACCEL_Y > 50)
+	if(ACCEL_X > 100 && ACCEL_Y > 100)
 	{
 		ESP_LOGI(TAG,"UP LEFT");
 	};
 
-	if(ACCEL_X < -50 && ACCEL_Y > 50)
+	if(ACCEL_X < -100 && ACCEL_Y > 100)
 	{	
 		ESP_LOGI(TAG,"UP RIGHT");
 	};
 
-	if(ACCEL_X < -50 && ACCEL_Y < -50)
+	if(ACCEL_X < -100 && ACCEL_Y < -100)
 	{	
 		ESP_LOGI(TAG,"DOWN RIGHT");
 	};
 
-		if(ACCEL_X < -50 && ACCEL_Y < -50)
+		if(ACCEL_X < -100 && ACCEL_Y < -100)
 	{	
 		ESP_LOGI(TAG,"DOWN RIGHT");
 	};
 
-	if(ACCEL_X > 50 && ACCEL_Y < -50)
+	if(ACCEL_X > 100 && ACCEL_Y < -100)
 	{	
 		ESP_LOGI(TAG,"DOWN LEFT");
 	};
 
-	if(ACCEL_X < -50 && ACCEL_Y > 50)
+	if(ACCEL_X < -100 && ACCEL_Y > 100)
 	{	
 		ESP_LOGI(TAG,"UP RIGHT");
 	};
 
-	if(ACCEL_X < -50 && ACCEL_Y > 50)
+	if(ACCEL_X < -100 && ACCEL_Y > 100)
 	{	
 		ESP_LOGI(TAG,"UP RIGHT");
 	};
@@ -132,6 +132,6 @@ while(1)
 {
 
 	get_direction(dev_handle);
-	vTaskDelay(pdMS_TO_TICKS(500));
+	vTaskDelay(pdMS_TO_TICKS(1000));
 }
 };
