@@ -1,0 +1,4 @@
+-march=rv32imc_zicsr_zifencei
+-mtune=esp-base
+"-specs=/home/richie/esp/CSE121_LABS/lab4_3/build/specs/picolibc.specs"
+-fno-rtti

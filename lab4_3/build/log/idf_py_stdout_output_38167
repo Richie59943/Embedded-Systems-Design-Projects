@@ -1,0 +1,208 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/CSE121_LABS/lab4_3/build/hidd_demos.elf /home/richie/esp/CSE121_LABS/lab4_3/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (105) esp_image: segment 1: paddr=0002f4d4 vaddr=3fc91000 sizeESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40389a12
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May  7 2026 15:24:41[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=1f4ach (128172) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=0002f4d4 vaddr=3fc91000 size=00b44h (  2884) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=7e080h (516224) map[0m
+[0;32mI (189) esp_image: segment 3: paddr=000ae0a8 vaddr=3fc91b44 size=01f68h (  8040) load[0m
+[0;32mI (191) esp_image: segment 4: paddr=000b0018 vaddr=40380000 size=10ed0h ( 69328) load[0m
+[0;32mI (205) esp_image: segment 5: paddr=000c0ef0 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (211) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (211) boot: Disabling RNG early entropy source...[0m
+[0;32mI (223) cpu_start: Unicore app[0m
+[0;32mI (231) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (231) cpu_start: Pro cpu start user code[0m
+[0;32mI (232) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (233) app_init: Application information:[0m
+[0;32mI (237) app_init: Project name:     hidd_demos[0m
+[0;32mI (241) app_init: App version:      1[0m
+[0;32mI (245) app_init: Compile time:     May  7 2026 15:24:21[0m
+[0;32mI (250) app_init: ELF file SHA256:  d2909fa50...[0m
+[0;32mI (254) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (260) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (263) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (267) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (278) heap_init: At 3FC97AA0 len 00028560 (161 KiB): RAM[0m
+[0;32mI (283) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (289) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (295) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (301) spi_flash: detected chip: generic[0m
+[0;32mI (304) spi_flash: flash io: dio[0m
+[0;33mW (307) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (319) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (325) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (341) main_task: Started on CPU0[0m
+[0;32mI (341) main_task: Calling app_main()[0m
+[0;32mI (351) BLE_INIT: BT controller compile version [2f68359][0m
+[0;32mI (351) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (351) BLE_INIT: Feature Config, ADV:1, BLE_50:0, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (361) BLE_INIT: Bluetooth MAC: b0:a6:04:6d:24:d6[0m
+[0;32mI (361) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (431) HID_LE_PRF: esp_hidd_prf_cb_hdl(), start added the hid service to the stack database. incl_handle = 40[0m
+[0;32mI (431) HID_LE_PRF: hid svc handle = 2d[0m
+[0;32mI (431) main_task: Returned from app_main()[0m
+[0;32mI (9531) HID_LE_PRF: HID connection establish, conn_id = 0[0m
+[0;32mI (9531) HID_DEMO: ESP_HIDD_EVENT_BLE_CONNECT[0m
+[0;32mI (9851) HID_DEMO: remote BD_ADDR: 342eb7e2bb4c[0m
+[0;32mI (9851) HID_DEMO: address type = 0[0m
+[0;32mI (9851) HID_DEMO: pair status = success[0m
+[0;32mI (9851) HID_DEMO: secure connection established.[0m
+[0;32mI (10881) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (10881) HID_DEMO: X=-239 Y=-250 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11931) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11931) HID_DEMO: X=-299 Y=-214 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12981) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12981) HID_DEMO: X=-15 Y=198 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14031) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14031) HID_DEMO: X=25 Y=232 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (15081) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (15081) HID_DEMO: X=106 Y=192 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (16131) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (16131) HID_DEMO: X=158 Y=-304 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (17181) HID_DEMO: X=3 Y=-875 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (18231) HID_DEMO: X=206 Y=-1210 x_delta=0 y_delta=45 a=3[0m
+[0;32mI (19281) HID_DEMO: X=301 Y=1359 x_delta=0 y_delta=-45 a=3[0m
+[0;32mI (20331) HID_DEMO: X=419 Y=1469 x_delta=0 y_delta=-45 a=3[0m
+[0;32mI (21381) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (21381) HID_DEMO: X=207 Y=-120 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (22431) HID_DEMO: X=1760 Y=167 x_delta=-30 y_delta=0 a=2[0m
+[0;32mI (23481) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (23481) HID_DEMO: X=496 Y=47 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (24531) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (24531) HID_DEMO: X=492 Y=27 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (25581) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (25581) HID_DEMO: X=527 Y=46 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (26631) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (26631) HID_DEMO: X=516 Y=34 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (27681) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (27681) HID_DEMO: X=511 Y=37 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (28731) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (28731) HID_DEMO: X=556 Y=-130 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (29781) HID_DEMO: X=226 Y=-1316 x_delta=0 y_delta=30 a=2[0m
+[0;32mI (30831) HID_DEMO: X=576 Y=999 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (31881) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (31881) HID_DEMO: X=604 Y=408 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (32931) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (32931) HID_DEMO: X=547 Y=186 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (33981) HID_DEMO: X=-1340 Y=718 x_delta=30 y_delta=0 a=2[0m
+[0;32mI (35031) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (35031) HID_DEMO: X=413 Y=-374 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (36081) HID_DEMO: X=208 Y=-1222 x_delta=0 y_delta=30 a=2[0m
+[0;32mI (37131) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (37131) HID_DEMO: X=654 Y=-133 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (38181) HID_DEMO: X=1421 Y=229 x_delta=-30 y_delta=0 a=2[0m
+[0;32mI (39231) HID_DEMO: X=1569 Y=314 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (40281) HID_DEMO: X=1798 Y=271 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (41331) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (41331) HID_DEMO: X=-435 Y=-261 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (42381) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (42381) HID_DEMO: X=-265 Y=-111 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (43431) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (43431) HID_DEMO: X=-210 Y=-177 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (44481) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (44481) HID_DEMO: X=-204 Y=-145 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (45531) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (45531) HID_DEMO: X=-223 Y=-144 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (46581) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (46581) HID_DEMO: X=-204 Y=-142 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (47631) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (47631) HID_DEMO: X=-216 Y=-154 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (48681) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (48681) HID_DEMO: X=-234 Y=-134 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49731) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49731) HID_DEMO: X=-188 Y=-157 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (50781) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (50781) HID_DEMO: X=-222 Y=-170 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (51831) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (51831) HID_DEMO: X=-209 Y=-155 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52881) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52881) HID_DEMO: X=-223 Y=-160 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53931) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (53931) HID_DEMO: X=-234 Y=-148 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54981) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54981) HID_DEMO: X=-225 Y=-140 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56031) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56031) HID_DEMO: X=-228 Y=-149 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (57081) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (57081) HID_DEMO: X=-239 Y=-132 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58131) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58131) HID_DEMO: X=-239 Y=-139 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (59181) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (59181) HID_DEMO: X=-242 Y=-144 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (60231) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (60231) HID_DEMO: X=-239 Y=-92 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (61281) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (61281) HID_DEMO: X=-214 Y=-173 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (62331) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (62331) HID_DEMO: X=-229 Y=-124 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63381) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63381) HID_DEMO: X=-209 Y=-138 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (64431) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (64431) HID_DEMO: X=-228 Y=-169 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (65481) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (65481) HID_DEMO: X=-219 Y=-147 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (66531) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (66531) HID_DEMO: X=-245 Y=-129 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (67581) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (67581) HID_DEMO: X=-239 Y=-151 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (68631) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (68631) HID_DEMO: X=-222 Y=-124 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (69681) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (69681) HID_DEMO: X=-234 Y=-137 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70731) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70731) HID_DEMO: X=-213 Y=-133 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71781) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71781) HID_DEMO: X=-234 Y=-142 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (72831) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (72831) HID_DEMO: X=-237 Y=-148 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (73881) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (73881) HID_DEMO: X=-230 Y=-149 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (74931) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (74931) HID_DEMO: X=-234 Y=-155 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (75981) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (75981) HID_DEMO: X=-234 Y=-148 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (77031) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (77031) HID_DEMO: X=-218 Y=-149 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (78081) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (78081) HID_DEMO: X=-92 Y=-148 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (79131) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (79131) HID_DEMO: X=-266 Y=654 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (80181) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (80181) HID_DEMO: X=-176 Y=171 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (81231) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (81231) HID_DEMO: X=-46 Y=-214 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (82281) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (82281) HID_DEMO: X=-67 Y=-48 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (83331) HID_DEMO: X=-1836 Y=275 x_delta=30 y_delta=0 a=2[0m
+[0;32mI (84381) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (84381) HID_DEMO: X=172 Y=-124 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (85431) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (85431) HID_DEMO: X=38 Y=-137 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (86481) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (86481) HID_DEMO: X=-24 Y=-120 x_delta=0 y_delta=0 a=1[0m
+[0;33mW (86981) BT_HCI: hcif disc complete: hdl 0x1, rsn 0x8 dev_find 1[0m
+[0;32mI (86981) HID_DEMO: ESP_HIDD_EVENT_BLE_DISCONNECT[0m
+[0;32mI (87531) HID_DEMO: X=-1964 Y=169 x_delta=30 y_delta=0 a=2[0m

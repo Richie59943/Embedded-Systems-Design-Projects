@@ -1,0 +1,1714 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/CSE121_LABS/lab4_3/build/hidd_demos.elf /home/richie/esp/CSE121_LABS/lab4_3/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (105) esp_image: segment 1: paddr=0002f4d4 vaddr=3fc91000 sizeESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x40389a12
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May  7 2026 15:24:41[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c080020 size=1f4ach (128172) map[0m
+[0;32mI (105) esp_image: segment 1: paddr=0002f4d4 vaddr=3fc91000 size=00b44h (  2884) load[0m
+[0;32mI (106) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=7e068h (516200) map[0m
+[0;32mI (189) esp_image: segment 3: paddr=000ae090 vaddr=3fc91b44 size=01f68h (  8040) load[0m
+[0;32mI (191) esp_image: segment 4: paddr=000b0000 vaddr=40380000 size=10ed0h ( 69328) load[0m
+[0;32mI (205) esp_image: segment 5: paddr=000c0ed8 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (211) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (211) boot: Disabling RNG early entropy source...[0m
+[0;32mI (223) cpu_start: Unicore app[0m
+[0;32mI (231) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (231) cpu_start: Pro cpu start user code[0m
+[0;32mI (231) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (233) app_init: Application information:[0m
+[0;32mI (237) app_init: Project name:     hidd_demos[0m
+[0;32mI (241) app_init: App version:      1[0m
+[0;32mI (245) app_init: Compile time:     May  7 2026 15:24:21[0m
+[0;32mI (250) app_init: ELF file SHA256:  089175c7e...[0m
+[0;32mI (254) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (259) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (263) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (267) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (271) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (277) heap_init: At 3FC97AA0 len 00028560 (161 KiB): RAM[0m
+[0;32mI (282) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (289) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (295) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (301) spi_flash: detected chip: generic[0m
+[0;32mI (304) spi_flash: flash io: dio[0m
+[0;33mW (307) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (319) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (325) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (340) main_task: Started on CPU0[0m
+[0;32mI (340) main_task: Calling app_main()[0m
+[0;32mI (350) BLE_INIT: BT controller compile version [2f68359][0m
+[0;32mI (350) BLE_INIT: Using main XTAL as clock source[0m
+[0;32mI (350) BLE_INIT: Feature Config, ADV:1, BLE_50:0, DTM:1, SCAN:1, CCA:0, SMP:1, CONNECT:1[0m
+[0;32mI (360) BLE_INIT: Bluetooth MAC: b0:a6:04:6d:24:d6[0m
+[0;32mI (360) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (400) phy_init: Saving new calibration data due to checksum failure or outdated calibration data, mode(0)[0m
+[0;32mI (430) HID_LE_PRF: esp_hidd_prf_cb_hdl(), start added the hid service to the stack database. incl_handle = 40[0m
+[0;32mI (440) HID_LE_PRF: hid svc handle = 2d[0m
+[0;32mI (440) main_task: Returned from app_main()[0m
+[0;32mI (800) HID_LE_PRF: HID connection establish, conn_id = 0[0m
+[0;32mI (800) HID_DEMO: ESP_HIDD_EVENT_BLE_CONNECT[0m
+[0;32mI (1110) HID_DEMO: remote BD_ADDR: 342eb7e2bb4c[0m
+[0;32mI (1110) HID_DEMO: address type = 0[0m
+[0;32mI (1110) HID_DEMO: pair status = success[0m
+[0;32mI (1110) HID_DEMO: secure connection established.[0m
+[0;32mI (1490) HID_DEMO: X=1437 Y=154 x_delta=-30 y_delta=-10 a=2[0m
+[0;32mI (1540) HID_DEMO: X=1532 Y=154 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1590) HID_DEMO: X=1541 Y=126 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (1640) HID_DEMO: X=1611 Y=193 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1690) HID_DEMO: X=1646 Y=156 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1740) HID_DEMO: X=1717 Y=186 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1790) HID_DEMO: X=1739 Y=125 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (1840) HID_DEMO: X=1699 Y=162 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1890) HID_DEMO: X=1675 Y=161 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1940) HID_DEMO: X=1740 Y=186 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (1990) HID_DEMO: X=1738 Y=173 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2040) HID_DEMO: X=1708 Y=159 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2090) HID_DEMO: X=1737 Y=181 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2140) HID_DEMO: X=1702 Y=171 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2190) HID_DEMO: X=1706 Y=177 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2240) HID_DEMO: X=1719 Y=182 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2290) HID_DEMO: X=1717 Y=173 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2340) HID_DEMO: X=1757 Y=186 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2390) HID_DEMO: X=1747 Y=176 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2440) HID_DEMO: X=1732 Y=172 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2490) HID_DEMO: X=1730 Y=161 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2540) HID_DEMO: X=1745 Y=180 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2590) HID_DEMO: X=1663 Y=214 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2640) HID_DEMO: X=1695 Y=201 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2690) HID_DEMO: X=1721 Y=187 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2740) HID_DEMO: X=1794 Y=185 x_delta=-45 y_delta=-15 a=3[0m
+[0;32mI (2790) HID_DEMO: X=1714 Y=145 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (2840) HID_DEMO: X=1271 Y=132 x_delta=-45 y_delta=0 a=3[0m
+[0;32mI (2890) HID_DEMO: X=1054 Y=7 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (2940) HID_DEMO: X=805 Y=-86 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (2990) HID_DEMO: X=391 Y=-375 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (3040) HID_DEMO: X=379 Y=-434 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (3090) HID_DEMO: X=177 Y=-408 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (3140) HID_DEMO: X=69 Y=-528 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3190) HID_DEMO: X=97 Y=-608 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3240) HID_DEMO: X=44 Y=-711 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3290) HID_DEMO: X=52 Y=-734 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3340) HID_DEMO: X=98 Y=-744 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3390) HID_DEMO: X=0 Y=-725 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3440) HID_DEMO: X=499 Y=-274 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (3490) HID_DEMO: X=48 Y=-596 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (3540) HID_DEMO: X=-260 Y=-256 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (3590) HID_DEMO: X=-210 Y=-199 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (3640) HID_DEMO: X=-848 Y=-180 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (3690) HID_DEMO: X=-962 Y=21 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (3740) HID_DEMO: X=-1157 Y=145 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (3790) HID_DEMO: X=-1116 Y=296 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (3840) HID_DEMO: X=-1207 Y=261 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (3890) HID_DEMO: X=-1122 Y=244 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (3940) HID_DEMO: X=-1291 Y=259 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (3990) HID_DEMO: X=-1302 Y=327 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4040) HID_DEMO: X=-1450 Y=246 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4090) HID_DEMO: X=-1450 Y=322 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4140) HID_DEMO: X=-1508 Y=268 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4190) HID_DEMO: X=-1512 Y=268 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4240) HID_DEMO: X=-1495 Y=509 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4290) HID_DEMO: X=-1563 Y=257 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4340) HID_DEMO: X=-1519 Y=271 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4390) HID_DEMO: X=-1568 Y=226 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4440) HID_DEMO: X=-1554 Y=235 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4490) HID_DEMO: X=-1563 Y=200 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4540) HID_DEMO: X=-1519 Y=195 x_delta=45 y_delta=-15 a=3[0m
+[0;32mI (4590) HID_DEMO: X=-1402 Y=125 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (4640) HID_DEMO: X=-1413 Y=141 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (4690) HID_DEMO: X=-1434 Y=112 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (4740) HID_DEMO: X=-1285 Y=23 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (4790) HID_DEMO: X=-877 Y=-112 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (4840) HID_DEMO: X=-588 Y=-139 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (4890) HID_DEMO: X=-344 Y=169 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (4940) HID_DEMO: X=394 Y=83 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (4990) HID_DEMO: X=343 Y=76 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5040) HID_DEMO: X=561 Y=52 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5090) HID_DEMO: X=540 Y=2 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5140) HID_DEMO: X=561 Y=56 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5190) HID_DEMO: X=615 Y=51 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5240) HID_DEMO: X=203 Y=18 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5290) HID_DEMO: X=189 Y=-24 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5340) HID_DEMO: X=-519 Y=-69 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5390) HID_DEMO: X=-549 Y=-96 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5440) HID_DEMO: X=-526 Y=-120 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5490) HID_DEMO: X=-447 Y=10 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5540) HID_DEMO: X=-266 Y=-91 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5590) HID_DEMO: X=-171 Y=-51 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (5640) HID_DEMO: X=48 Y=-175 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (5690) HID_DEMO: X=-36 Y=-191 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (5740) HID_DEMO: X=155 Y=-107 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (5790) HID_DEMO: X=187 Y=-166 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (5840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (5840) HID_DEMO: X=144 Y=-132 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (5890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (5890) HID_DEMO: X=87 Y=-131 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (5940) HID_DEMO: X=132 Y=-183 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (5990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (5990) HID_DEMO: X=68 Y=-70 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6040) HID_DEMO: X=151 Y=-7 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (6090) HID_DEMO: X=229 Y=-44 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (6140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6140) HID_DEMO: X=140 Y=69 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6190) HID_DEMO: X=115 Y=152 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (6240) HID_DEMO: X=209 Y=180 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (6290) HID_DEMO: X=120 Y=271 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (6340) HID_DEMO: X=130 Y=255 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (6390) HID_DEMO: X=59 Y=226 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (6440) HID_DEMO: X=170 Y=2 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (6490) HID_DEMO: X=145 Y=241 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (6540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6540) HID_DEMO: X=96 Y=117 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6590) HID_DEMO: X=96 Y=97 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6640) HID_DEMO: X=98 Y=53 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6690) HID_DEMO: X=145 Y=62 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6740) HID_DEMO: X=72 Y=4 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6790) HID_DEMO: X=72 Y=-25 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6840) HID_DEMO: X=96 Y=13 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6890) HID_DEMO: X=151 Y=-11 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (6940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6940) HID_DEMO: X=123 Y=20 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (6990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (6990) HID_DEMO: X=105 Y=-7 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (7040) HID_DEMO: X=161 Y=-2 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (7090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (7090) HID_DEMO: X=143 Y=22 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (7140) HID_DEMO: X=186 Y=-35 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (7190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (7190) HID_DEMO: X=136 Y=-119 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (7240) HID_DEMO: X=156 Y=-147 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (7290) HID_DEMO: X=336 Y=-148 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (7340) HID_DEMO: X=313 Y=-239 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7390) HID_DEMO: X=288 Y=-343 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7440) HID_DEMO: X=249 Y=-418 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7490) HID_DEMO: X=278 Y=-451 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7540) HID_DEMO: X=334 Y=-461 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7590) HID_DEMO: X=307 Y=-539 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7640) HID_DEMO: X=278 Y=-566 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7690) HID_DEMO: X=231 Y=-615 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7740) HID_DEMO: X=226 Y=-622 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7790) HID_DEMO: X=220 Y=-625 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7840) HID_DEMO: X=275 Y=-592 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7890) HID_DEMO: X=290 Y=-629 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7940) HID_DEMO: X=292 Y=-630 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (7990) HID_DEMO: X=509 Y=-642 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8040) HID_DEMO: X=243 Y=-628 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8090) HID_DEMO: X=240 Y=-568 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8140) HID_DEMO: X=298 Y=-585 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8190) HID_DEMO: X=233 Y=-763 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8240) HID_DEMO: X=202 Y=-305 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8290) HID_DEMO: X=177 Y=-286 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (8340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (8340) HID_DEMO: X=2 Y=-119 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (8390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (8390) HID_DEMO: X=29 Y=-8 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (8440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (8440) HID_DEMO: X=59 Y=63 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (8490) HID_DEMO: X=53 Y=267 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (8540) HID_DEMO: X=-22 Y=242 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8590) HID_DEMO: X=23 Y=324 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8640) HID_DEMO: X=-18 Y=400 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8690) HID_DEMO: X=15 Y=432 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8740) HID_DEMO: X=-63 Y=424 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8790) HID_DEMO: X=-24 Y=474 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8840) HID_DEMO: X=-68 Y=438 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8890) HID_DEMO: X=-76 Y=455 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8940) HID_DEMO: X=-37 Y=488 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (8990) HID_DEMO: X=-62 Y=488 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9040) HID_DEMO: X=-41 Y=473 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9090) HID_DEMO: X=-76 Y=480 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9140) HID_DEMO: X=-92 Y=483 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9190) HID_DEMO: X=-102 Y=505 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9240) HID_DEMO: X=-88 Y=488 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9290) HID_DEMO: X=-89 Y=489 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9340) HID_DEMO: X=-105 Y=483 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9390) HID_DEMO: X=-96 Y=476 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9440) HID_DEMO: X=-120 Y=494 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9490) HID_DEMO: X=-94 Y=498 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (9540) HID_DEMO: X=-225 Y=463 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9590) HID_DEMO: X=-404 Y=356 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9640) HID_DEMO: X=-752 Y=207 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9690) HID_DEMO: X=-892 Y=213 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9740) HID_DEMO: X=-1025 Y=181 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9790) HID_DEMO: X=-1059 Y=124 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (9840) HID_DEMO: X=-1005 Y=165 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9890) HID_DEMO: X=-988 Y=145 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (9940) HID_DEMO: X=-939 Y=166 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (9990) HID_DEMO: X=-938 Y=167 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10040) HID_DEMO: X=-905 Y=172 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10090) HID_DEMO: X=-899 Y=159 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10140) HID_DEMO: X=-884 Y=184 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10190) HID_DEMO: X=-900 Y=190 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10240) HID_DEMO: X=-906 Y=162 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10290) HID_DEMO: X=-913 Y=165 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10340) HID_DEMO: X=-909 Y=170 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10390) HID_DEMO: X=-905 Y=159 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10440) HID_DEMO: X=-857 Y=138 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10490) HID_DEMO: X=-778 Y=175 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10540) HID_DEMO: X=-789 Y=157 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (10590) HID_DEMO: X=-802 Y=129 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10640) HID_DEMO: X=-711 Y=135 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10690) HID_DEMO: X=-670 Y=74 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10740) HID_DEMO: X=-417 Y=150 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10790) HID_DEMO: X=-315 Y=54 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (10840) HID_DEMO: X=-90 Y=153 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (10890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (10890) HID_DEMO: X=-108 Y=78 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (10940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (10940) HID_DEMO: X=-36 Y=76 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (10990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (10990) HID_DEMO: X=-106 Y=64 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11040) HID_DEMO: X=-62 Y=76 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11090) HID_DEMO: X=-106 Y=64 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11140) HID_DEMO: X=-109 Y=63 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11190) HID_DEMO: X=-93 Y=70 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11240) HID_DEMO: X=-5 Y=79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11290) HID_DEMO: X=-56 Y=40 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11340) HID_DEMO: X=-17 Y=41 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11390) HID_DEMO: X=12 Y=16 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11440) HID_DEMO: X=4 Y=-9 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11490) HID_DEMO: X=23 Y=16 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11540) HID_DEMO: X=42 Y=-29 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11590) HID_DEMO: X=23 Y=-24 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11640) HID_DEMO: X=75 Y=-78 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11690) HID_DEMO: X=37 Y=-33 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11740) HID_DEMO: X=38 Y=-82 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11790) HID_DEMO: X=79 Y=-50 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11840) HID_DEMO: X=2 Y=-79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11890) HID_DEMO: X=38 Y=-64 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11940) HID_DEMO: X=29 Y=-78 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (11990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (11990) HID_DEMO: X=33 Y=-62 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12040) HID_DEMO: X=5 Y=-17 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12090) HID_DEMO: X=100 Y=42 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12140) HID_DEMO: X=60 Y=16 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12190) HID_DEMO: X=93 Y=-49 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12240) HID_DEMO: X=-17 Y=-81 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12290) HID_DEMO: X=157 Y=-101 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (12340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12340) HID_DEMO: X=34 Y=-121 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12390) HID_DEMO: X=37 Y=-65 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12440) HID_DEMO: X=138 Y=-97 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12490) HID_DEMO: X=16 Y=33 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12540) HID_DEMO: X=134 Y=22 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12590) HID_DEMO: X=19 Y=31 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12640) HID_DEMO: X=195 Y=22 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (12690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12690) HID_DEMO: X=104 Y=66 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12740) HID_DEMO: X=112 Y=-1 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12790) HID_DEMO: X=35 Y=-28 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12840) HID_DEMO: X=79 Y=-13 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12890) HID_DEMO: X=110 Y=35 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12940) HID_DEMO: X=100 Y=11 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (12990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (12990) HID_DEMO: X=134 Y=3 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13040) HID_DEMO: X=96 Y=27 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13090) HID_DEMO: X=108 Y=42 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13140) HID_DEMO: X=92 Y=26 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13190) HID_DEMO: X=104 Y=19 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13240) HID_DEMO: X=93 Y=19 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13290) HID_DEMO: X=114 Y=44 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13340) HID_DEMO: X=109 Y=35 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13390) HID_DEMO: X=110 Y=31 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13440) HID_DEMO: X=94 Y=25 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13490) HID_DEMO: X=121 Y=10 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13540) HID_DEMO: X=120 Y=6 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13590) HID_DEMO: X=122 Y=-42 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13640) HID_DEMO: X=132 Y=-34 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13690) HID_DEMO: X=187 Y=-83 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (13740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13740) HID_DEMO: X=146 Y=-92 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13790) HID_DEMO: X=113 Y=-102 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13840) HID_DEMO: X=137 Y=-59 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13890) HID_DEMO: X=157 Y=-59 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (13940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13940) HID_DEMO: X=137 Y=-73 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (13990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (13990) HID_DEMO: X=147 Y=-76 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14040) HID_DEMO: X=139 Y=-78 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14090) HID_DEMO: X=138 Y=-67 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14140) HID_DEMO: X=138 Y=-61 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14190) HID_DEMO: X=138 Y=-84 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14240) HID_DEMO: X=147 Y=-62 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14290) HID_DEMO: X=146 Y=-84 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14340) HID_DEMO: X=155 Y=-69 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (14390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14390) HID_DEMO: X=145 Y=-79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14440) HID_DEMO: X=142 Y=-63 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14490) HID_DEMO: X=146 Y=-75 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14540) HID_DEMO: X=139 Y=-65 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14590) HID_DEMO: X=183 Y=-56 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (14640) HID_DEMO: X=247 Y=-169 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (14690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (14690) HID_DEMO: X=58 Y=-150 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (14740) HID_DEMO: X=14 Y=-310 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (14790) HID_DEMO: X=179 Y=-343 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (14840) HID_DEMO: X=210 Y=-436 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (14890) HID_DEMO: X=130 Y=-592 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (14940) HID_DEMO: X=133 Y=-614 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (14990) HID_DEMO: X=203 Y=-668 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15040) HID_DEMO: X=149 Y=-699 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (15090) HID_DEMO: X=163 Y=-665 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15140) HID_DEMO: X=188 Y=-654 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15190) HID_DEMO: X=243 Y=-609 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15240) HID_DEMO: X=265 Y=-617 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15290) HID_DEMO: X=188 Y=-450 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15340) HID_DEMO: X=484 Y=-464 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (15390) HID_DEMO: X=-70 Y=-221 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (15440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (15440) HID_DEMO: X=21 Y=-54 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (15490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (15490) HID_DEMO: X=-148 Y=113 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (15540) HID_DEMO: X=-102 Y=356 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (15590) HID_DEMO: X=50 Y=478 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15640) HID_DEMO: X=52 Y=549 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15690) HID_DEMO: X=24 Y=501 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15740) HID_DEMO: X=32 Y=501 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15790) HID_DEMO: X=-77 Y=506 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15840) HID_DEMO: X=-19 Y=511 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15890) HID_DEMO: X=-5 Y=487 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15940) HID_DEMO: X=-64 Y=490 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (15990) HID_DEMO: X=-43 Y=445 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16040) HID_DEMO: X=7 Y=476 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16090) HID_DEMO: X=-14 Y=480 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16140) HID_DEMO: X=-59 Y=440 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16190) HID_DEMO: X=-3 Y=487 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16240) HID_DEMO: X=-35 Y=495 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16290) HID_DEMO: X=-70 Y=484 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16340) HID_DEMO: X=-16 Y=524 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16390) HID_DEMO: X=-24 Y=476 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16440) HID_DEMO: X=-74 Y=389 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16490) HID_DEMO: X=-95 Y=373 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16540) HID_DEMO: X=-39 Y=315 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16590) HID_DEMO: X=-18 Y=216 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16640) HID_DEMO: X=-20 Y=162 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (16690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (16690) HID_DEMO: X=107 Y=-71 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (16740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (16740) HID_DEMO: X=11 Y=-88 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (16790) HID_DEMO: X=244 Y=-242 x_delta=-10 y_delta=10 a=2[0m
+[0;32mI (16840) HID_DEMO: X=127 Y=-348 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (16890) HID_DEMO: X=213 Y=-385 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (16940) HID_DEMO: X=245 Y=-521 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (16990) HID_DEMO: X=212 Y=-526 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17040) HID_DEMO: X=203 Y=-531 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17090) HID_DEMO: X=228 Y=-563 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17140) HID_DEMO: X=282 Y=-526 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17190) HID_DEMO: X=253 Y=-580 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17240) HID_DEMO: X=508 Y=-580 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17290) HID_DEMO: X=227 Y=-567 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17340) HID_DEMO: X=203 Y=-592 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17390) HID_DEMO: X=245 Y=-555 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17440) HID_DEMO: X=250 Y=-598 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17490) HID_DEMO: X=272 Y=-579 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17540) HID_DEMO: X=258 Y=-606 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17590) HID_DEMO: X=282 Y=-600 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17640) HID_DEMO: X=382 Y=-559 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17690) HID_DEMO: X=511 Y=-508 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17740) HID_DEMO: X=615 Y=-465 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17790) HID_DEMO: X=866 Y=-334 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17840) HID_DEMO: X=920 Y=-384 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17890) HID_DEMO: X=985 Y=-345 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17940) HID_DEMO: X=1006 Y=-334 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (17990) HID_DEMO: X=946 Y=-351 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18040) HID_DEMO: X=1003 Y=-295 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18090) HID_DEMO: X=965 Y=-321 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18140) HID_DEMO: X=937 Y=-310 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18190) HID_DEMO: X=998 Y=-287 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18240) HID_DEMO: X=969 Y=-279 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18290) HID_DEMO: X=1004 Y=-275 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18340) HID_DEMO: X=982 Y=-279 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18390) HID_DEMO: X=1021 Y=-264 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18440) HID_DEMO: X=982 Y=-253 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18490) HID_DEMO: X=729 Y=-298 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18540) HID_DEMO: X=645 Y=-283 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (18590) HID_DEMO: X=33 Y=-424 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (18640) HID_DEMO: X=-299 Y=-384 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18690) HID_DEMO: X=-689 Y=-345 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18740) HID_DEMO: X=-741 Y=-277 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18790) HID_DEMO: X=-849 Y=-282 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18840) HID_DEMO: X=-948 Y=-322 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18890) HID_DEMO: X=-1067 Y=-332 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18940) HID_DEMO: X=-1068 Y=-303 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (18990) HID_DEMO: X=-1031 Y=-301 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19040) HID_DEMO: X=-989 Y=-439 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19090) HID_DEMO: X=-1271 Y=-531 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (19140) HID_DEMO: X=-1026 Y=-627 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19190) HID_DEMO: X=-991 Y=-659 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19240) HID_DEMO: X=-863 Y=-771 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19290) HID_DEMO: X=-858 Y=-796 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19340) HID_DEMO: X=-813 Y=-870 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19390) HID_DEMO: X=-755 Y=-865 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19440) HID_DEMO: X=-703 Y=-886 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19490) HID_DEMO: X=-662 Y=-857 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19540) HID_DEMO: X=-600 Y=-861 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19590) HID_DEMO: X=-584 Y=-850 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19640) HID_DEMO: X=-515 Y=-865 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19690) HID_DEMO: X=-440 Y=-869 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19740) HID_DEMO: X=-341 Y=-881 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (19790) HID_DEMO: X=-51 Y=-690 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (19840) HID_DEMO: X=-95 Y=-879 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (19890) HID_DEMO: X=-36 Y=-795 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (19940) HID_DEMO: X=80 Y=-834 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (19990) HID_DEMO: X=38 Y=-877 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20040) HID_DEMO: X=94 Y=-840 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20090) HID_DEMO: X=57 Y=-857 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20140) HID_DEMO: X=72 Y=-849 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20190) HID_DEMO: X=54 Y=-877 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20240) HID_DEMO: X=249 Y=-852 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (20290) HID_DEMO: X=-61 Y=-537 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (20340) HID_DEMO: X=485 Y=-672 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (20390) HID_DEMO: X=-260 Y=-247 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (20440) HID_DEMO: X=157 Y=-120 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (20490) HID_DEMO: X=-122 Y=228 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (20540) HID_DEMO: X=11 Y=451 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (20590) HID_DEMO: X=26 Y=743 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (20640) HID_DEMO: X=29 Y=807 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (20690) HID_DEMO: X=-91 Y=798 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (20740) HID_DEMO: X=-177 Y=826 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (20790) HID_DEMO: X=-186 Y=898 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (20840) HID_DEMO: X=-252 Y=965 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (20890) HID_DEMO: X=-226 Y=964 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (20940) HID_DEMO: X=-272 Y=992 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (20990) HID_DEMO: X=-145 Y=1066 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (21040) HID_DEMO: X=-222 Y=1084 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (21090) HID_DEMO: X=-223 Y=1038 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (21140) HID_DEMO: X=-247 Y=1085 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (21190) HID_DEMO: X=-185 Y=1101 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (21240) HID_DEMO: X=-168 Y=1159 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (21290) HID_DEMO: X=-125 Y=1144 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (21340) HID_DEMO: X=-125 Y=1157 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (21390) HID_DEMO: X=-47 Y=1190 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (21440) HID_DEMO: X=0 Y=1231 x_delta=0 y_delta=-45 a=3[0m
+[0;32mI (21490) HID_DEMO: X=209 Y=1196 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (21540) HID_DEMO: X=252 Y=1229 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21590) HID_DEMO: X=539 Y=1208 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21640) HID_DEMO: X=508 Y=1252 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21690) HID_DEMO: X=613 Y=1218 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21740) HID_DEMO: X=489 Y=1204 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21790) HID_DEMO: X=505 Y=1209 x_delta=-15 y_delta=-45 a=3[0m
+[0;32mI (21840) HID_DEMO: X=441 Y=1173 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (21890) HID_DEMO: X=485 Y=1161 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (21940) HID_DEMO: X=267 Y=1182 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (21990) HID_DEMO: X=-117 Y=1100 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (22040) HID_DEMO: X=-150 Y=1111 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (22090) HID_DEMO: X=-403 Y=1085 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22140) HID_DEMO: X=-411 Y=1043 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22190) HID_DEMO: X=-495 Y=1107 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22240) HID_DEMO: X=-563 Y=1077 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22290) HID_DEMO: X=-527 Y=1071 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22340) HID_DEMO: X=-504 Y=1039 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22390) HID_DEMO: X=-549 Y=1108 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22440) HID_DEMO: X=-525 Y=1090 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22490) HID_DEMO: X=-562 Y=1084 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22540) HID_DEMO: X=-525 Y=1066 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22590) HID_DEMO: X=-536 Y=1042 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22640) HID_DEMO: X=-561 Y=1084 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22690) HID_DEMO: X=-612 Y=1015 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22740) HID_DEMO: X=-615 Y=1020 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22790) HID_DEMO: X=-688 Y=1002 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22840) HID_DEMO: X=-651 Y=935 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22890) HID_DEMO: X=-678 Y=907 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22940) HID_DEMO: X=-748 Y=898 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (22990) HID_DEMO: X=-698 Y=889 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23040) HID_DEMO: X=-706 Y=799 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23090) HID_DEMO: X=-644 Y=793 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23140) HID_DEMO: X=-609 Y=776 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23190) HID_DEMO: X=-685 Y=781 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23240) HID_DEMO: X=-619 Y=756 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23290) HID_DEMO: X=-635 Y=781 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23340) HID_DEMO: X=-405 Y=743 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23390) HID_DEMO: X=-300 Y=491 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23440) HID_DEMO: X=-308 Y=511 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (23490) HID_DEMO: X=-40 Y=437 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23540) HID_DEMO: X=-120 Y=345 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23590) HID_DEMO: X=43 Y=332 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23640) HID_DEMO: X=-33 Y=341 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23690) HID_DEMO: X=59 Y=363 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23740) HID_DEMO: X=2 Y=334 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23790) HID_DEMO: X=53 Y=383 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23840) HID_DEMO: X=51 Y=385 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23890) HID_DEMO: X=42 Y=352 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23940) HID_DEMO: X=97 Y=262 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (23990) HID_DEMO: X=212 Y=199 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (24040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (24040) HID_DEMO: X=119 Y=48 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (24090) HID_DEMO: X=393 Y=-57 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (24140) HID_DEMO: X=527 Y=-220 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24190) HID_DEMO: X=527 Y=-370 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24240) HID_DEMO: X=401 Y=-440 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24290) HID_DEMO: X=414 Y=-510 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24340) HID_DEMO: X=389 Y=-510 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24390) HID_DEMO: X=463 Y=-469 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24440) HID_DEMO: X=440 Y=-518 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24490) HID_DEMO: X=474 Y=-440 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24540) HID_DEMO: X=403 Y=-252 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24590) HID_DEMO: X=436 Y=-178 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24640) HID_DEMO: X=494 Y=-193 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (24690) HID_DEMO: X=188 Y=186 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (24740) HID_DEMO: X=-81 Y=321 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (24790) HID_DEMO: X=-124 Y=537 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (24840) HID_DEMO: X=-60 Y=738 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (24890) HID_DEMO: X=-107 Y=863 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (24940) HID_DEMO: X=-200 Y=813 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (24990) HID_DEMO: X=-302 Y=771 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25040) HID_DEMO: X=-641 Y=675 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25090) HID_DEMO: X=-796 Y=602 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25140) HID_DEMO: X=-1040 Y=540 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25190) HID_DEMO: X=-1060 Y=503 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25240) HID_DEMO: X=-1089 Y=499 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25290) HID_DEMO: X=-891 Y=492 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25340) HID_DEMO: X=-688 Y=466 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25390) HID_DEMO: X=-238 Y=559 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25440) HID_DEMO: X=76 Y=491 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (25490) HID_DEMO: X=311 Y=689 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (25540) HID_DEMO: X=204 Y=447 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (25590) HID_DEMO: X=210 Y=473 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (25640) HID_DEMO: X=225 Y=420 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (25690) HID_DEMO: X=195 Y=492 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (25740) HID_DEMO: X=141 Y=451 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (25790) HID_DEMO: X=24 Y=437 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (25840) HID_DEMO: X=-348 Y=385 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25890) HID_DEMO: X=-521 Y=347 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25940) HID_DEMO: X=-658 Y=350 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (25990) HID_DEMO: X=-790 Y=359 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26040) HID_DEMO: X=-870 Y=326 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26090) HID_DEMO: X=-807 Y=425 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26140) HID_DEMO: X=-698 Y=346 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26190) HID_DEMO: X=-393 Y=481 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26240) HID_DEMO: X=-238 Y=433 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26290) HID_DEMO: X=-174 Y=423 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26340) HID_DEMO: X=-69 Y=446 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26390) HID_DEMO: X=-147 Y=417 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26440) HID_DEMO: X=-92 Y=431 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26490) HID_DEMO: X=-144 Y=429 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26540) HID_DEMO: X=-197 Y=334 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (26590) HID_DEMO: X=-104 Y=408 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26640) HID_DEMO: X=-98 Y=364 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26690) HID_DEMO: X=-75 Y=383 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26740) HID_DEMO: X=-88 Y=360 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26790) HID_DEMO: X=-85 Y=354 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26840) HID_DEMO: X=-48 Y=367 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26890) HID_DEMO: X=14 Y=337 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26940) HID_DEMO: X=37 Y=354 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (26990) HID_DEMO: X=224 Y=315 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27040) HID_DEMO: X=198 Y=323 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27090) HID_DEMO: X=197 Y=275 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27140) HID_DEMO: X=189 Y=239 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27190) HID_DEMO: X=175 Y=226 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27240) HID_DEMO: X=150 Y=209 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27290) HID_DEMO: X=72 Y=187 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27340) HID_DEMO: X=180 Y=257 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27390) HID_DEMO: X=158 Y=293 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (27440) HID_DEMO: X=149 Y=287 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27490) HID_DEMO: X=42 Y=291 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27540) HID_DEMO: X=47 Y=317 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27590) HID_DEMO: X=-66 Y=283 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27640) HID_DEMO: X=16 Y=299 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27690) HID_DEMO: X=-91 Y=175 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27740) HID_DEMO: X=47 Y=188 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (27790) HID_DEMO: X=-151 Y=114 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (27840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (27840) HID_DEMO: X=-150 Y=67 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (27890) HID_DEMO: X=-207 Y=46 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (27940) HID_DEMO: X=-233 Y=57 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (27990) HID_DEMO: X=-249 Y=30 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (28040) HID_DEMO: X=-211 Y=36 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (28090) HID_DEMO: X=-185 Y=-2 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (28140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (28140) HID_DEMO: X=-131 Y=41 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (28190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (28190) HID_DEMO: X=-145 Y=-23 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (28240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (28240) HID_DEMO: X=-108 Y=2 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (28290) HID_DEMO: X=-193 Y=0 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (28340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (28340) HID_DEMO: X=-80 Y=-2 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (28390) HID_DEMO: X=-158 Y=55 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (28440) HID_DEMO: X=216 Y=222 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (28490) HID_DEMO: X=445 Y=282 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (28540) HID_DEMO: X=649 Y=263 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (28590) HID_DEMO: X=706 Y=146 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (28640) HID_DEMO: X=675 Y=97 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (28690) HID_DEMO: X=730 Y=199 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (28740) HID_DEMO: X=381 Y=91 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (28790) HID_DEMO: X=205 Y=-43 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (28840) HID_DEMO: X=-27 Y=-212 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (28890) HID_DEMO: X=-94 Y=-198 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (28940) HID_DEMO: X=-134 Y=-210 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (28990) HID_DEMO: X=-111 Y=-184 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29040) HID_DEMO: X=-20 Y=-186 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29090) HID_DEMO: X=38 Y=-198 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29140) HID_DEMO: X=94 Y=-166 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29190) HID_DEMO: X=196 Y=-281 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29240) HID_DEMO: X=225 Y=-259 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29290) HID_DEMO: X=185 Y=-354 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29340) HID_DEMO: X=259 Y=-327 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29390) HID_DEMO: X=217 Y=-319 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29440) HID_DEMO: X=151 Y=-240 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (29490) HID_DEMO: X=149 Y=-152 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29540) HID_DEMO: X=108 Y=-208 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (29590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (29590) HID_DEMO: X=-135 Y=86 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (29640) HID_DEMO: X=73 Y=201 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (29690) HID_DEMO: X=-166 Y=425 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (29740) HID_DEMO: X=-163 Y=503 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (29790) HID_DEMO: X=-170 Y=548 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (29840) HID_DEMO: X=-97 Y=625 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (29890) HID_DEMO: X=-148 Y=625 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (29940) HID_DEMO: X=-129 Y=643 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (29990) HID_DEMO: X=-270 Y=576 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (30040) HID_DEMO: X=-275 Y=520 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (30090) HID_DEMO: X=-35 Y=556 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (30140) HID_DEMO: X=345 Y=687 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30190) HID_DEMO: X=449 Y=615 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30240) HID_DEMO: X=540 Y=520 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30290) HID_DEMO: X=565 Y=480 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30340) HID_DEMO: X=584 Y=465 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30390) HID_DEMO: X=693 Y=494 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30440) HID_DEMO: X=630 Y=452 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30490) HID_DEMO: X=702 Y=402 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30540) HID_DEMO: X=684 Y=405 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30590) HID_DEMO: X=685 Y=393 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30640) HID_DEMO: X=737 Y=397 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30690) HID_DEMO: X=622 Y=308 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30740) HID_DEMO: X=621 Y=302 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30790) HID_DEMO: X=607 Y=295 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30840) HID_DEMO: X=531 Y=245 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30890) HID_DEMO: X=401 Y=151 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (30940) HID_DEMO: X=269 Y=28 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (30990) HID_DEMO: X=289 Y=81 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31040) HID_DEMO: X=217 Y=39 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31090) HID_DEMO: X=204 Y=32 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31140) HID_DEMO: X=276 Y=59 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31190) HID_DEMO: X=273 Y=48 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31240) HID_DEMO: X=234 Y=-11 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31290) HID_DEMO: X=235 Y=-120 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (31340) HID_DEMO: X=251 Y=-311 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (31390) HID_DEMO: X=344 Y=-384 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (31440) HID_DEMO: X=205 Y=-545 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (31490) HID_DEMO: X=180 Y=-530 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (31540) HID_DEMO: X=54 Y=-579 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31590) HID_DEMO: X=20 Y=-626 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31640) HID_DEMO: X=-22 Y=-658 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31690) HID_DEMO: X=-2 Y=-645 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31740) HID_DEMO: X=8 Y=-648 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31790) HID_DEMO: X=71 Y=-638 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31840) HID_DEMO: X=16 Y=-621 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31890) HID_DEMO: X=3 Y=-598 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31940) HID_DEMO: X=45 Y=-597 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (31990) HID_DEMO: X=107 Y=-538 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32040) HID_DEMO: X=40 Y=-600 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32090) HID_DEMO: X=74 Y=-594 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32140) HID_DEMO: X=17 Y=-569 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32190) HID_DEMO: X=25 Y=-543 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32240) HID_DEMO: X=89 Y=-525 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32290) HID_DEMO: X=-7 Y=-527 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32340) HID_DEMO: X=0 Y=-499 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32390) HID_DEMO: X=25 Y=-475 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32440) HID_DEMO: X=9 Y=-500 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32490) HID_DEMO: X=6 Y=-478 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32540) HID_DEMO: X=-2 Y=-488 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32590) HID_DEMO: X=31 Y=-472 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32640) HID_DEMO: X=-24 Y=-481 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32690) HID_DEMO: X=-47 Y=-461 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32740) HID_DEMO: X=-80 Y=-510 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (32790) HID_DEMO: X=-423 Y=-476 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (32840) HID_DEMO: X=-466 Y=-354 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (32890) HID_DEMO: X=-666 Y=-355 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (32940) HID_DEMO: X=-709 Y=-288 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (32990) HID_DEMO: X=-750 Y=-265 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33040) HID_DEMO: X=-768 Y=-270 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33090) HID_DEMO: X=-785 Y=-247 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33140) HID_DEMO: X=-781 Y=-253 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33190) HID_DEMO: X=-782 Y=-252 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33240) HID_DEMO: X=-786 Y=-252 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33290) HID_DEMO: X=-770 Y=-263 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33340) HID_DEMO: X=-768 Y=-274 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33390) HID_DEMO: X=-805 Y=-299 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33440) HID_DEMO: X=-788 Y=-310 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33490) HID_DEMO: X=-632 Y=-334 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33540) HID_DEMO: X=-325 Y=-227 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (33590) HID_DEMO: X=337 Y=-244 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (33640) HID_DEMO: X=513 Y=-35 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33690) HID_DEMO: X=702 Y=-29 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33740) HID_DEMO: X=701 Y=-76 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33790) HID_DEMO: X=713 Y=-90 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33840) HID_DEMO: X=791 Y=-43 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33890) HID_DEMO: X=757 Y=-49 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33940) HID_DEMO: X=706 Y=-96 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (33990) HID_DEMO: X=777 Y=-88 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (34040) HID_DEMO: X=778 Y=-98 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (34090) HID_DEMO: X=826 Y=-121 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (34140) HID_DEMO: X=857 Y=-167 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34190) HID_DEMO: X=799 Y=-274 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34240) HID_DEMO: X=713 Y=-283 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34290) HID_DEMO: X=578 Y=-443 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34340) HID_DEMO: X=511 Y=-486 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34390) HID_DEMO: X=572 Y=-501 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34440) HID_DEMO: X=448 Y=-609 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34490) HID_DEMO: X=375 Y=-705 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34540) HID_DEMO: X=330 Y=-736 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34590) HID_DEMO: X=326 Y=-789 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34640) HID_DEMO: X=291 Y=-750 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34690) HID_DEMO: X=219 Y=-889 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34740) HID_DEMO: X=137 Y=-786 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (34790) HID_DEMO: X=268 Y=-722 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34840) HID_DEMO: X=314 Y=-384 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34890) HID_DEMO: X=296 Y=-413 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (34940) HID_DEMO: X=156 Y=-58 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (34990) HID_DEMO: X=119 Y=215 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35040) HID_DEMO: X=118 Y=468 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35090) HID_DEMO: X=301 Y=649 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (35140) HID_DEMO: X=273 Y=718 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (35190) HID_DEMO: X=125 Y=631 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35240) HID_DEMO: X=187 Y=678 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (35290) HID_DEMO: X=91 Y=731 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35340) HID_DEMO: X=251 Y=804 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (35390) HID_DEMO: X=62 Y=680 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35440) HID_DEMO: X=115 Y=678 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35490) HID_DEMO: X=113 Y=721 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35540) HID_DEMO: X=113 Y=704 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35590) HID_DEMO: X=85 Y=712 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35640) HID_DEMO: X=33 Y=719 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35690) HID_DEMO: X=-27 Y=740 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35740) HID_DEMO: X=-55 Y=779 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35790) HID_DEMO: X=-112 Y=844 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35840) HID_DEMO: X=-128 Y=837 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35890) HID_DEMO: X=-157 Y=879 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (35940) HID_DEMO: X=-128 Y=893 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (35990) HID_DEMO: X=-172 Y=885 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (36040) HID_DEMO: X=-135 Y=890 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36090) HID_DEMO: X=-130 Y=906 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36140) HID_DEMO: X=-124 Y=918 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36190) HID_DEMO: X=-170 Y=871 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (36240) HID_DEMO: X=-148 Y=899 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36290) HID_DEMO: X=-131 Y=943 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36340) HID_DEMO: X=-88 Y=938 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36390) HID_DEMO: X=-89 Y=933 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36440) HID_DEMO: X=-6 Y=938 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36490) HID_DEMO: X=27 Y=955 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36540) HID_DEMO: X=-44 Y=925 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36590) HID_DEMO: X=-69 Y=948 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36640) HID_DEMO: X=-82 Y=926 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36690) HID_DEMO: X=-31 Y=937 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36740) HID_DEMO: X=-42 Y=917 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36790) HID_DEMO: X=-57 Y=928 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36840) HID_DEMO: X=-53 Y=931 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36890) HID_DEMO: X=1 Y=920 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36940) HID_DEMO: X=67 Y=893 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (36990) HID_DEMO: X=187 Y=902 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37040) HID_DEMO: X=327 Y=860 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37090) HID_DEMO: X=370 Y=882 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37140) HID_DEMO: X=445 Y=873 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37190) HID_DEMO: X=453 Y=853 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37240) HID_DEMO: X=468 Y=841 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37290) HID_DEMO: X=484 Y=855 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37340) HID_DEMO: X=278 Y=817 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37390) HID_DEMO: X=55 Y=764 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (37440) HID_DEMO: X=102 Y=788 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (37490) HID_DEMO: X=28 Y=852 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (37540) HID_DEMO: X=83 Y=823 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (37590) HID_DEMO: X=83 Y=859 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (37640) HID_DEMO: X=247 Y=955 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37690) HID_DEMO: X=201 Y=908 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37740) HID_DEMO: X=287 Y=930 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37790) HID_DEMO: X=306 Y=929 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37840) HID_DEMO: X=336 Y=921 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37890) HID_DEMO: X=333 Y=911 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37940) HID_DEMO: X=199 Y=792 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (37990) HID_DEMO: X=100 Y=721 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38040) HID_DEMO: X=97 Y=698 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38090) HID_DEMO: X=-2 Y=642 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38140) HID_DEMO: X=-65 Y=584 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38190) HID_DEMO: X=-120 Y=521 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38240) HID_DEMO: X=-193 Y=490 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (38290) HID_DEMO: X=-233 Y=477 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (38340) HID_DEMO: X=-216 Y=471 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (38390) HID_DEMO: X=-122 Y=486 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38440) HID_DEMO: X=-240 Y=449 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (38490) HID_DEMO: X=-234 Y=426 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (38540) HID_DEMO: X=-147 Y=334 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38590) HID_DEMO: X=105 Y=373 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38640) HID_DEMO: X=67 Y=317 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (38690) HID_DEMO: X=179 Y=287 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38740) HID_DEMO: X=212 Y=276 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38790) HID_DEMO: X=247 Y=230 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38840) HID_DEMO: X=302 Y=269 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38890) HID_DEMO: X=242 Y=240 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38940) HID_DEMO: X=231 Y=197 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (38990) HID_DEMO: X=194 Y=168 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (39040) HID_DEMO: X=160 Y=59 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (39090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39090) HID_DEMO: X=107 Y=87 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39140) HID_DEMO: X=40 Y=8 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39190) HID_DEMO: X=53 Y=10 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39240) HID_DEMO: X=2 Y=-48 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39290) HID_DEMO: X=40 Y=-36 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39340) HID_DEMO: X=-35 Y=-100 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39390) HID_DEMO: X=72 Y=-69 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39440) HID_DEMO: X=-57 Y=-142 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39490) HID_DEMO: X=15 Y=-108 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39540) HID_DEMO: X=3 Y=-159 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (39590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39590) HID_DEMO: X=57 Y=-121 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39640) HID_DEMO: X=29 Y=-183 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (39690) HID_DEMO: X=23 Y=-204 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (39740) HID_DEMO: X=50 Y=-182 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (39790) HID_DEMO: X=-15 Y=-192 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (39840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39840) HID_DEMO: X=54 Y=-79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (39890) HID_DEMO: X=-149 Y=-89 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (39940) HID_DEMO: X=-205 Y=3 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (39990) HID_DEMO: X=-358 Y=35 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40040) HID_DEMO: X=-437 Y=115 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40090) HID_DEMO: X=-557 Y=113 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40140) HID_DEMO: X=-550 Y=141 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40190) HID_DEMO: X=-606 Y=122 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40240) HID_DEMO: X=-572 Y=170 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (40290) HID_DEMO: X=-398 Y=67 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40340) HID_DEMO: X=-300 Y=138 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (40390) HID_DEMO: X=61 Y=181 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (40440) HID_DEMO: X=172 Y=184 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (40490) HID_DEMO: X=396 Y=225 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (40540) HID_DEMO: X=394 Y=135 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40590) HID_DEMO: X=451 Y=174 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (40640) HID_DEMO: X=400 Y=132 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40690) HID_DEMO: X=475 Y=163 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (40740) HID_DEMO: X=413 Y=139 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40790) HID_DEMO: X=476 Y=145 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40840) HID_DEMO: X=475 Y=144 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40890) HID_DEMO: X=532 Y=128 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40940) HID_DEMO: X=462 Y=111 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (40990) HID_DEMO: X=374 Y=83 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (41040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (41040) HID_DEMO: X=0 Y=22 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (41090) HID_DEMO: X=-326 Y=-73 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (41140) HID_DEMO: X=-508 Y=-93 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41190) HID_DEMO: X=-668 Y=-95 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41240) HID_DEMO: X=-671 Y=-111 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41290) HID_DEMO: X=-712 Y=-134 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41340) HID_DEMO: X=-688 Y=-121 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41390) HID_DEMO: X=-735 Y=-100 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41440) HID_DEMO: X=-772 Y=-108 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41490) HID_DEMO: X=-817 Y=-127 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41540) HID_DEMO: X=-794 Y=-75 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41590) HID_DEMO: X=-765 Y=-72 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41640) HID_DEMO: X=-591 Y=-81 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (41690) HID_DEMO: X=-479 Y=-287 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (41740) HID_DEMO: X=-339 Y=-426 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (41790) HID_DEMO: X=-259 Y=-554 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (41840) HID_DEMO: X=-113 Y=-572 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (41890) HID_DEMO: X=19 Y=-568 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (41940) HID_DEMO: X=-3 Y=-578 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (41990) HID_DEMO: X=6 Y=-559 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42040) HID_DEMO: X=26 Y=-534 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42090) HID_DEMO: X=66 Y=-546 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42140) HID_DEMO: X=111 Y=-550 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42190) HID_DEMO: X=136 Y=-594 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42240) HID_DEMO: X=118 Y=-617 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42290) HID_DEMO: X=160 Y=-628 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42340) HID_DEMO: X=190 Y=-649 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42390) HID_DEMO: X=216 Y=-586 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42440) HID_DEMO: X=231 Y=-591 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42490) HID_DEMO: X=260 Y=-572 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42540) HID_DEMO: X=294 Y=-549 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42590) HID_DEMO: X=328 Y=-557 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42640) HID_DEMO: X=301 Y=-473 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42690) HID_DEMO: X=227 Y=-419 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (42740) HID_DEMO: X=88 Y=-404 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42790) HID_DEMO: X=9 Y=-367 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (42840) HID_DEMO: X=-441 Y=-193 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (42890) HID_DEMO: X=-460 Y=-91 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (42940) HID_DEMO: X=-525 Y=69 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (42990) HID_DEMO: X=-536 Y=308 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43040) HID_DEMO: X=-395 Y=469 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43090) HID_DEMO: X=-461 Y=505 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43140) HID_DEMO: X=-387 Y=587 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43190) HID_DEMO: X=-401 Y=627 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43240) HID_DEMO: X=-405 Y=618 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43290) HID_DEMO: X=-451 Y=626 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43340) HID_DEMO: X=-334 Y=692 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43390) HID_DEMO: X=-261 Y=692 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43440) HID_DEMO: X=-240 Y=570 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (43490) HID_DEMO: X=7 Y=492 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (43540) HID_DEMO: X=-15 Y=287 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (43590) HID_DEMO: X=259 Y=356 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (43640) HID_DEMO: X=225 Y=242 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (43690) HID_DEMO: X=263 Y=202 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (43740) HID_DEMO: X=229 Y=125 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (43790) HID_DEMO: X=256 Y=127 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (43840) HID_DEMO: X=188 Y=109 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (43890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (43890) HID_DEMO: X=52 Y=104 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (43940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (43940) HID_DEMO: X=-79 Y=35 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (43990) HID_DEMO: X=-252 Y=-55 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (44040) HID_DEMO: X=-333 Y=-101 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (44090) HID_DEMO: X=-375 Y=-141 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (44140) HID_DEMO: X=-371 Y=-92 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (44190) HID_DEMO: X=-360 Y=-94 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (44240) HID_DEMO: X=-320 Y=-46 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (44290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (44290) HID_DEMO: X=-59 Y=93 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (44340) HID_DEMO: X=204 Y=232 x_delta=-10 y_delta=-10 a=2[0m
+[0;32mI (44390) HID_DEMO: X=285 Y=294 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44440) HID_DEMO: X=348 Y=352 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44490) HID_DEMO: X=243 Y=349 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44540) HID_DEMO: X=272 Y=387 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44590) HID_DEMO: X=200 Y=303 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44640) HID_DEMO: X=162 Y=198 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (44690) HID_DEMO: X=153 Y=85 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (44740) HID_DEMO: X=175 Y=25 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (44790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (44790) HID_DEMO: X=88 Y=-76 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (44840) HID_DEMO: X=252 Y=-165 x_delta=-10 y_delta=10 a=2[0m
+[0;32mI (44890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (44890) HID_DEMO: X=149 Y=-95 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (44940) HID_DEMO: X=75 Y=-176 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (44990) HID_DEMO: X=190 Y=-217 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45040) HID_DEMO: X=123 Y=-222 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45090) HID_DEMO: X=169 Y=-256 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45140) HID_DEMO: X=103 Y=-251 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45190) HID_DEMO: X=171 Y=-282 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45240) HID_DEMO: X=140 Y=-329 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45290) HID_DEMO: X=128 Y=-342 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45340) HID_DEMO: X=133 Y=-334 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45390) HID_DEMO: X=101 Y=-315 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45440) HID_DEMO: X=153 Y=-304 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45490) HID_DEMO: X=75 Y=-326 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45540) HID_DEMO: X=19 Y=-330 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45590) HID_DEMO: X=-101 Y=-342 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45640) HID_DEMO: X=-80 Y=-360 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45690) HID_DEMO: X=-1 Y=-302 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45740) HID_DEMO: X=105 Y=-286 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (45790) HID_DEMO: X=335 Y=-183 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45840) HID_DEMO: X=492 Y=-139 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (45890) HID_DEMO: X=553 Y=-155 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (45940) HID_DEMO: X=600 Y=-130 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (45990) HID_DEMO: X=564 Y=-136 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (46040) HID_DEMO: X=462 Y=-120 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (46090) HID_DEMO: X=273 Y=-158 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (46140) HID_DEMO: X=75 Y=-244 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (46190) HID_DEMO: X=-339 Y=-284 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46240) HID_DEMO: X=-484 Y=-320 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46290) HID_DEMO: X=-608 Y=-266 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46340) HID_DEMO: X=-650 Y=-290 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46390) HID_DEMO: X=-677 Y=-291 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46440) HID_DEMO: X=-673 Y=-304 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46490) HID_DEMO: X=-693 Y=-307 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46540) HID_DEMO: X=-671 Y=-320 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46590) HID_DEMO: X=-701 Y=-362 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46640) HID_DEMO: X=-558 Y=-473 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46690) HID_DEMO: X=-767 Y=-475 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46740) HID_DEMO: X=-340 Y=-555 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46790) HID_DEMO: X=-189 Y=-735 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46840) HID_DEMO: X=-285 Y=-639 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46890) HID_DEMO: X=-325 Y=-714 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46940) HID_DEMO: X=-300 Y=-663 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (46990) HID_DEMO: X=-302 Y=-630 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (47040) HID_DEMO: X=-318 Y=-545 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (47090) HID_DEMO: X=-78 Y=-477 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (47140) HID_DEMO: X=-248 Y=-192 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (47190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (47190) HID_DEMO: X=-76 Y=-17 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (47240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (47240) HID_DEMO: X=-149 Y=134 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (47290) HID_DEMO: X=-14 Y=309 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (47340) HID_DEMO: X=-33 Y=410 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47390) HID_DEMO: X=-7 Y=431 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47440) HID_DEMO: X=-40 Y=474 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47490) HID_DEMO: X=-53 Y=517 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47540) HID_DEMO: X=-26 Y=552 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47590) HID_DEMO: X=-37 Y=561 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47640) HID_DEMO: X=-98 Y=543 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47690) HID_DEMO: X=-51 Y=584 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47740) HID_DEMO: X=-120 Y=578 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47790) HID_DEMO: X=-70 Y=593 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47840) HID_DEMO: X=-91 Y=609 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47890) HID_DEMO: X=-99 Y=632 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47940) HID_DEMO: X=-74 Y=614 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (47990) HID_DEMO: X=-87 Y=651 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48040) HID_DEMO: X=-46 Y=652 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48090) HID_DEMO: X=-58 Y=638 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48140) HID_DEMO: X=-62 Y=646 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48190) HID_DEMO: X=-67 Y=656 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48240) HID_DEMO: X=-109 Y=643 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48290) HID_DEMO: X=-108 Y=607 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48340) HID_DEMO: X=-46 Y=644 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48390) HID_DEMO: X=-38 Y=641 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48440) HID_DEMO: X=-36 Y=635 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48490) HID_DEMO: X=-48 Y=644 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48540) HID_DEMO: X=-45 Y=631 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48590) HID_DEMO: X=-8 Y=662 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48640) HID_DEMO: X=-20 Y=650 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48690) HID_DEMO: X=8 Y=650 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48740) HID_DEMO: X=11 Y=645 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48790) HID_DEMO: X=30 Y=651 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48840) HID_DEMO: X=52 Y=646 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48890) HID_DEMO: X=64 Y=630 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48940) HID_DEMO: X=133 Y=626 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (48990) HID_DEMO: X=190 Y=610 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (49040) HID_DEMO: X=209 Y=596 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (49090) HID_DEMO: X=167 Y=512 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (49140) HID_DEMO: X=159 Y=473 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (49190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49190) HID_DEMO: X=29 Y=144 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49240) HID_DEMO: X=-120 Y=-33 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49290) HID_DEMO: X=75 Y=-18 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49340) HID_DEMO: X=-19 Y=-132 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49390) HID_DEMO: X=8 Y=-233 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (49440) HID_DEMO: X=-107 Y=-290 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49490) HID_DEMO: X=-249 Y=-261 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (49540) HID_DEMO: X=-95 Y=-248 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49590) HID_DEMO: X=28 Y=-234 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49640) HID_DEMO: X=-24 Y=-293 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49690) HID_DEMO: X=-7 Y=-226 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49740) HID_DEMO: X=-62 Y=-213 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49790) HID_DEMO: X=-17 Y=-166 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (49840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49840) HID_DEMO: X=-111 Y=-144 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49890) HID_DEMO: X=-26 Y=-19 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (49940) HID_DEMO: X=-35 Y=66 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (49990) HID_DEMO: X=12 Y=177 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (50040) HID_DEMO: X=-45 Y=204 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (50090) HID_DEMO: X=-33 Y=249 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (50140) HID_DEMO: X=12 Y=293 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (50190) HID_DEMO: X=66 Y=268 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (50240) HID_DEMO: X=143 Y=160 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (50290) HID_DEMO: X=-199 Y=-66 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (50340) HID_DEMO: X=-227 Y=-199 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50390) HID_DEMO: X=-339 Y=-277 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50440) HID_DEMO: X=-355 Y=-360 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50490) HID_DEMO: X=-379 Y=-372 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50540) HID_DEMO: X=-315 Y=-352 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50590) HID_DEMO: X=-316 Y=-392 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50640) HID_DEMO: X=-264 Y=-377 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50690) HID_DEMO: X=-232 Y=-358 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50740) HID_DEMO: X=-224 Y=-328 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50790) HID_DEMO: X=-218 Y=-339 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50840) HID_DEMO: X=-286 Y=-366 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50890) HID_DEMO: X=-345 Y=-400 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50940) HID_DEMO: X=-352 Y=-391 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (50990) HID_DEMO: X=-357 Y=-403 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51040) HID_DEMO: X=-325 Y=-388 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51090) HID_DEMO: X=-310 Y=-390 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51140) HID_DEMO: X=-370 Y=-428 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51190) HID_DEMO: X=-368 Y=-447 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51240) HID_DEMO: X=-390 Y=-455 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51290) HID_DEMO: X=-369 Y=-454 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51340) HID_DEMO: X=-398 Y=-470 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51390) HID_DEMO: X=-408 Y=-466 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51440) HID_DEMO: X=-256 Y=-397 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51490) HID_DEMO: X=-242 Y=-420 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (51540) HID_DEMO: X=-142 Y=-405 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (51590) HID_DEMO: X=15 Y=-406 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (51640) HID_DEMO: X=145 Y=-399 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (51690) HID_DEMO: X=339 Y=-321 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51740) HID_DEMO: X=416 Y=-300 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51790) HID_DEMO: X=527 Y=-510 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51840) HID_DEMO: X=480 Y=-287 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51890) HID_DEMO: X=507 Y=-320 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51940) HID_DEMO: X=479 Y=-299 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (51990) HID_DEMO: X=509 Y=-275 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52040) HID_DEMO: X=521 Y=-264 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52090) HID_DEMO: X=433 Y=-293 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52140) HID_DEMO: X=408 Y=-302 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52190) HID_DEMO: X=228 Y=-311 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52240) HID_DEMO: X=246 Y=-354 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (52290) HID_DEMO: X=-33 Y=-348 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52340) HID_DEMO: X=12 Y=-329 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52390) HID_DEMO: X=-33 Y=-319 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52440) HID_DEMO: X=-34 Y=-273 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52490) HID_DEMO: X=-52 Y=-222 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52540) HID_DEMO: X=-6 Y=-217 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52590) HID_DEMO: X=24 Y=-182 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52640) HID_DEMO: X=44 Y=-158 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (52690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52690) HID_DEMO: X=108 Y=-97 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52740) HID_DEMO: X=37 Y=-119 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52790) HID_DEMO: X=8 Y=-47 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52840) HID_DEMO: X=-31 Y=-6 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52890) HID_DEMO: X=-63 Y=56 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (52940) HID_DEMO: X=-206 Y=92 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (52990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (52990) HID_DEMO: X=-100 Y=149 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53040) HID_DEMO: X=-104 Y=229 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (53090) HID_DEMO: X=-58 Y=231 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53140) HID_DEMO: X=-49 Y=209 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53190) HID_DEMO: X=-56 Y=205 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53240) HID_DEMO: X=-102 Y=193 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53290) HID_DEMO: X=-75 Y=190 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53340) HID_DEMO: X=-69 Y=171 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53390) HID_DEMO: X=-52 Y=180 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53440) HID_DEMO: X=-51 Y=165 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53490) HID_DEMO: X=-56 Y=159 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53540) HID_DEMO: X=-24 Y=179 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (53590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (53590) HID_DEMO: X=-12 Y=143 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (53640) HID_DEMO: X=137 Y=50 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53690) HID_DEMO: X=-152 Y=-26 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (53740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (53740) HID_DEMO: X=109 Y=-57 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (53790) HID_DEMO: X=-16 Y=-120 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (53840) HID_DEMO: X=-6 Y=-186 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (53890) HID_DEMO: X=-4 Y=-222 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (53940) HID_DEMO: X=39 Y=-246 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (53990) HID_DEMO: X=-254 Y=-325 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (54040) HID_DEMO: X=46 Y=-275 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (54090) HID_DEMO: X=58 Y=-291 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (54140) HID_DEMO: X=5 Y=-210 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (54190) HID_DEMO: X=6 Y=-227 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (54240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54240) HID_DEMO: X=18 Y=-111 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54290) HID_DEMO: X=-46 Y=-111 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54340) HID_DEMO: X=3 Y=-27 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54390) HID_DEMO: X=0 Y=33 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54440) HID_DEMO: X=-41 Y=253 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (54490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54490) HID_DEMO: X=-66 Y=3 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54540) HID_DEMO: X=-68 Y=29 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54590) HID_DEMO: X=-41 Y=50 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54640) HID_DEMO: X=-53 Y=36 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54690) HID_DEMO: X=-54 Y=25 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54740) HID_DEMO: X=-56 Y=32 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54790) HID_DEMO: X=-29 Y=54 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54840) HID_DEMO: X=-4 Y=75 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54890) HID_DEMO: X=-49 Y=29 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54940) HID_DEMO: X=-19 Y=45 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (54990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (54990) HID_DEMO: X=-35 Y=57 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55040) HID_DEMO: X=-35 Y=42 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55090) HID_DEMO: X=-11 Y=56 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55140) HID_DEMO: X=5 Y=54 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55190) HID_DEMO: X=-13 Y=50 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55240) HID_DEMO: X=4 Y=43 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55290) HID_DEMO: X=-26 Y=38 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55340) HID_DEMO: X=-19 Y=53 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55390) HID_DEMO: X=22 Y=45 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55440) HID_DEMO: X=-58 Y=41 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55490) HID_DEMO: X=-134 Y=-12 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (55540) HID_DEMO: X=-238 Y=29 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (55590) HID_DEMO: X=-272 Y=-4 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55640) HID_DEMO: X=-295 Y=-21 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55690) HID_DEMO: X=-272 Y=-14 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55740) HID_DEMO: X=-310 Y=-26 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55790) HID_DEMO: X=-299 Y=-15 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55840) HID_DEMO: X=-284 Y=-3 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55890) HID_DEMO: X=-288 Y=-8 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55940) HID_DEMO: X=-162 Y=-21 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (55990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (55990) HID_DEMO: X=-59 Y=19 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56040) HID_DEMO: X=70 Y=41 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56090) HID_DEMO: X=162 Y=33 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (56140) HID_DEMO: X=242 Y=72 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56190) HID_DEMO: X=296 Y=-251 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (56240) HID_DEMO: X=400 Y=41 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56290) HID_DEMO: X=362 Y=37 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56340) HID_DEMO: X=361 Y=27 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56390) HID_DEMO: X=369 Y=36 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56440) HID_DEMO: X=331 Y=50 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56490) HID_DEMO: X=270 Y=55 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56540) HID_DEMO: X=205 Y=54 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (56590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56590) HID_DEMO: X=95 Y=0 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56640) HID_DEMO: X=58 Y=19 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56690) HID_DEMO: X=6 Y=23 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56740) HID_DEMO: X=-85 Y=44 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56790) HID_DEMO: X=-143 Y=47 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56840) HID_DEMO: X=-161 Y=43 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (56890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (56890) HID_DEMO: X=-127 Y=135 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (56940) HID_DEMO: X=-43 Y=195 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (56990) HID_DEMO: X=-81 Y=256 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57040) HID_DEMO: X=-45 Y=280 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (57090) HID_DEMO: X=-50 Y=6 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (57140) HID_DEMO: X=-36 Y=273 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (57190) HID_DEMO: X=-71 Y=265 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57240) HID_DEMO: X=-50 Y=287 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57290) HID_DEMO: X=-62 Y=266 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57340) HID_DEMO: X=-34 Y=248 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57390) HID_DEMO: X=-6 Y=196 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (57440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (57440) HID_DEMO: X=-6 Y=93 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (57490) HID_DEMO: X=203 Y=7 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (57540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (57540) HID_DEMO: X=73 Y=-92 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (57590) HID_DEMO: X=88 Y=-220 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (57640) HID_DEMO: X=170 Y=-308 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57690) HID_DEMO: X=151 Y=-278 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57740) HID_DEMO: X=210 Y=-330 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57790) HID_DEMO: X=165 Y=-330 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57840) HID_DEMO: X=167 Y=-315 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57890) HID_DEMO: X=160 Y=-228 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (57940) HID_DEMO: X=183 Y=-101 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (57990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (57990) HID_DEMO: X=119 Y=4 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58040) HID_DEMO: X=-29 Y=-3 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58090) HID_DEMO: X=61 Y=54 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58140) HID_DEMO: X=109 Y=107 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58190) HID_DEMO: X=81 Y=103 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58240) HID_DEMO: X=62 Y=80 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58290) HID_DEMO: X=53 Y=79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58340) HID_DEMO: X=52 Y=75 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58390) HID_DEMO: X=70 Y=98 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58440) HID_DEMO: X=32 Y=54 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58490) HID_DEMO: X=98 Y=92 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58540) HID_DEMO: X=118 Y=93 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58590) HID_DEMO: X=101 Y=60 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58640) HID_DEMO: X=67 Y=63 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (58690) HID_DEMO: X=-32 Y=42 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (58740) HID_DEMO: X=-178 Y=-148 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (58790) HID_DEMO: X=-336 Y=-13 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (58840) HID_DEMO: X=-422 Y=-61 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (58890) HID_DEMO: X=-429 Y=-78 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (58940) HID_DEMO: X=-407 Y=-61 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (58990) HID_DEMO: X=-396 Y=-59 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (59040) HID_DEMO: X=-330 Y=-59 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (59090) HID_DEMO: X=-328 Y=-44 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (59140) HID_DEMO: X=-271 Y=-153 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59190) HID_DEMO: X=-292 Y=-251 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59240) HID_DEMO: X=-179 Y=-318 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59290) HID_DEMO: X=-157 Y=-441 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59340) HID_DEMO: X=-166 Y=-413 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59390) HID_DEMO: X=-144 Y=-424 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59440) HID_DEMO: X=-74 Y=-433 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59490) HID_DEMO: X=-156 Y=-467 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (59540) HID_DEMO: X=-105 Y=-452 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59590) HID_DEMO: X=-87 Y=-459 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59640) HID_DEMO: X=-74 Y=-453 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59690) HID_DEMO: X=-66 Y=-423 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59740) HID_DEMO: X=-32 Y=-369 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59790) HID_DEMO: X=4 Y=-235 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (59840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (59840) HID_DEMO: X=-31 Y=-56 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (59890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (59890) HID_DEMO: X=76 Y=100 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (59940) HID_DEMO: X=21 Y=236 x_delta=0 y_delta=-10 a=2[0m
+[0;32mI (59990) HID_DEMO: X=80 Y=304 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60040) HID_DEMO: X=13 Y=331 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60090) HID_DEMO: X=-5 Y=333 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60140) HID_DEMO: X=8 Y=355 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60190) HID_DEMO: X=-3 Y=357 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60240) HID_DEMO: X=56 Y=353 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60290) HID_DEMO: X=35 Y=357 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60340) HID_DEMO: X=34 Y=330 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60390) HID_DEMO: X=37 Y=351 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60440) HID_DEMO: X=24 Y=320 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60490) HID_DEMO: X=7 Y=346 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60540) HID_DEMO: X=16 Y=345 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60590) HID_DEMO: X=-7 Y=392 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60640) HID_DEMO: X=-6 Y=368 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60690) HID_DEMO: X=-22 Y=431 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60740) HID_DEMO: X=-83 Y=456 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (60790) HID_DEMO: X=-189 Y=512 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (60840) HID_DEMO: X=-247 Y=482 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (60890) HID_DEMO: X=-285 Y=560 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (60940) HID_DEMO: X=-312 Y=533 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (60990) HID_DEMO: X=-361 Y=520 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (61040) HID_DEMO: X=-383 Y=534 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (61090) HID_DEMO: X=-266 Y=509 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (61140) HID_DEMO: X=-189 Y=447 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (61190) HID_DEMO: X=-83 Y=462 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61240) HID_DEMO: X=12 Y=483 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61290) HID_DEMO: X=52 Y=435 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61340) HID_DEMO: X=102 Y=413 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61390) HID_DEMO: X=100 Y=408 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61440) HID_DEMO: X=92 Y=408 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61490) HID_DEMO: X=103 Y=442 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61540) HID_DEMO: X=118 Y=379 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61590) HID_DEMO: X=156 Y=391 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61640) HID_DEMO: X=165 Y=391 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61690) HID_DEMO: X=179 Y=376 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61740) HID_DEMO: X=147 Y=378 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (61790) HID_DEMO: X=224 Y=382 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61840) HID_DEMO: X=228 Y=383 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61890) HID_DEMO: X=203 Y=363 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61940) HID_DEMO: X=187 Y=378 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (61990) HID_DEMO: X=188 Y=378 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62040) HID_DEMO: X=180 Y=360 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62090) HID_DEMO: X=47 Y=348 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62140) HID_DEMO: X=-32 Y=327 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62190) HID_DEMO: X=-219 Y=276 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (62240) HID_DEMO: X=-196 Y=274 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (62290) HID_DEMO: X=-248 Y=309 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (62340) HID_DEMO: X=-268 Y=276 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (62390) HID_DEMO: X=-196 Y=231 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (62440) HID_DEMO: X=-31 Y=301 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62490) HID_DEMO: X=99 Y=289 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62540) HID_DEMO: X=177 Y=326 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62590) HID_DEMO: X=195 Y=287 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62640) HID_DEMO: X=249 Y=312 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62690) HID_DEMO: X=180 Y=312 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (62740) HID_DEMO: X=100 Y=293 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62790) HID_DEMO: X=91 Y=266 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62840) HID_DEMO: X=10 Y=194 x_delta=0 y_delta=-15 a=3[0m
+[0;32mI (62890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (62890) HID_DEMO: X=-47 Y=32 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (62940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (62940) HID_DEMO: X=-15 Y=-4 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (62990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (62990) HID_DEMO: X=-22 Y=-33 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63040) HID_DEMO: X=30 Y=-53 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63090) HID_DEMO: X=9 Y=-115 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63140) HID_DEMO: X=21 Y=-141 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63190) HID_DEMO: X=11 Y=-159 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (63240) HID_DEMO: X=61 Y=-170 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63290) HID_DEMO: X=39 Y=-188 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63340) HID_DEMO: X=69 Y=-198 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63390) HID_DEMO: X=59 Y=-225 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63440) HID_DEMO: X=62 Y=-242 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63490) HID_DEMO: X=76 Y=-176 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (63540) HID_DEMO: X=161 Y=-216 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (63590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63590) HID_DEMO: X=-96 Y=86 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (63640) HID_DEMO: X=-308 Y=123 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (63690) HID_DEMO: X=-381 Y=298 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63740) HID_DEMO: X=-761 Y=362 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63790) HID_DEMO: X=-522 Y=449 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63840) HID_DEMO: X=-551 Y=460 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63890) HID_DEMO: X=-429 Y=411 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63940) HID_DEMO: X=-396 Y=226 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (63990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (63990) HID_DEMO: X=-57 Y=146 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (64040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (64040) HID_DEMO: X=104 Y=65 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (64090) HID_DEMO: X=23 Y=-171 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (64140) HID_DEMO: X=146 Y=-189 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (64190) HID_DEMO: X=59 Y=-390 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (64240) HID_DEMO: X=229 Y=-303 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64290) HID_DEMO: X=249 Y=-327 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64340) HID_DEMO: X=184 Y=-339 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64390) HID_DEMO: X=133 Y=-361 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (64440) HID_DEMO: X=275 Y=-330 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64490) HID_DEMO: X=294 Y=-328 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64540) HID_DEMO: X=457 Y=-313 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (64590) HID_DEMO: X=149 Y=-294 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (64640) HID_DEMO: X=-125 Y=-408 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (64690) HID_DEMO: X=-339 Y=-766 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64740) HID_DEMO: X=-489 Y=-403 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64790) HID_DEMO: X=-500 Y=-409 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64840) HID_DEMO: X=-500 Y=-355 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64890) HID_DEMO: X=-383 Y=-386 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64940) HID_DEMO: X=-305 Y=-409 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (64990) HID_DEMO: X=-13 Y=-368 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (65040) HID_DEMO: X=-4 Y=-341 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (65090) HID_DEMO: X=202 Y=-338 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65140) HID_DEMO: X=223 Y=-379 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65190) HID_DEMO: X=322 Y=-373 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65240) HID_DEMO: X=402 Y=-276 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65290) HID_DEMO: X=355 Y=-429 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65340) HID_DEMO: X=372 Y=-403 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (65390) HID_DEMO: X=471 Y=-146 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (65440) HID_DEMO: X=-147 Y=-463 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (65490) HID_DEMO: X=-155 Y=-421 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (65540) HID_DEMO: X=168 Y=159 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (65590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (65590) HID_DEMO: X=-9 Y=-112 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (65640) HID_DEMO: X=-288 Y=-290 x_delta=10 y_delta=10 a=2[0m
+[0;32mI (65690) HID_DEMO: X=-201 Y=345 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (65740) HID_DEMO: X=-983 Y=-421 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (65790) HID_DEMO: X=-505 Y=-27 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (65840) HID_DEMO: X=-736 Y=-8 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (65890) HID_DEMO: X=-663 Y=-14 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (65940) HID_DEMO: X=-549 Y=-186 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (65990) HID_DEMO: X=-490 Y=-67 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66040) HID_DEMO: X=-361 Y=-119 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66090) HID_DEMO: X=-262 Y=-84 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66140) HID_DEMO: X=-275 Y=-80 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66190) HID_DEMO: X=-443 Y=-7 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66240) HID_DEMO: X=-394 Y=-108 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66290) HID_DEMO: X=-427 Y=-56 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66340) HID_DEMO: X=-396 Y=-71 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66390) HID_DEMO: X=-485 Y=-74 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66440) HID_DEMO: X=-224 Y=-83 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66490) HID_DEMO: X=-621 Y=-30 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (66540) HID_DEMO: X=22 Y=100 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (66590) HID_DEMO: X=261 Y=-200 x_delta=-10 y_delta=10 a=2[0m
+[0;32mI (66640) HID_DEMO: X=558 Y=-42 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (66690) HID_DEMO: X=370 Y=-55 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (66740) HID_DEMO: X=329 Y=-109 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (66790) HID_DEMO: X=364 Y=-72 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (66840) HID_DEMO: X=453 Y=-10 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (66890) HID_DEMO: X=-10 Y=-161 x_delta=0 y_delta=15 a=3[0m
+[0;32mI (66940) HID_DEMO: X=-406 Y=46 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (66990) HID_DEMO: X=-617 Y=13 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67040) HID_DEMO: X=-754 Y=-1 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67090) HID_DEMO: X=-780 Y=-135 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67140) HID_DEMO: X=-929 Y=77 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67190) HID_DEMO: X=-882 Y=77 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67240) HID_DEMO: X=-912 Y=25 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67290) HID_DEMO: X=-1008 Y=73 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67340) HID_DEMO: X=-698 Y=-26 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67390) HID_DEMO: X=-350 Y=-187 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (67440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (67440) HID_DEMO: X=-28 Y=24 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (67490) HID_DEMO: X=-96 Y=-238 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (67540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (67540) HID_DEMO: X=139 Y=-79 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (67590) HID_DEMO: X=-49 Y=-210 x_delta=0 y_delta=10 a=2[0m
+[0;32mI (67640) HID_DEMO: X=311 Y=130 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (67690) HID_DEMO: X=308 Y=-51 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (67740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (67740) HID_DEMO: X=104 Y=-113 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (67790) HID_DEMO: X=183 Y=-45 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (67840) HID_DEMO: X=-601 Y=-41 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (67890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (67890) HID_DEMO: X=0 Y=-49 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (67940) HID_DEMO: X=-398 Y=-45 x_delta=10 y_delta=0 a=2[0m
+[0;32mI (67990) HID_DEMO: X=-248 Y=-71 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (68040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (68040) HID_DEMO: X=-86 Y=-109 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (68090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (68090) HID_DEMO: X=-82 Y=-21 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (68140) HID_DEMO: X=837 Y=1477 x_delta=-10 y_delta=-30 a=2[0m
+[0;32mI (68190) HID_DEMO: X=738 Y=-28 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (68240) HID_DEMO: X=224 Y=-142 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (68290) HID_DEMO: X=-260 Y=-27 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (68340) HID_DEMO: X=-461 Y=264 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68390) HID_DEMO: X=-276 Y=328 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68440) HID_DEMO: X=-999 Y=612 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68490) HID_DEMO: X=29 Y=1285 x_delta=0 y_delta=-45 a=3[0m
+[0;32mI (68540) HID_DEMO: X=-329 Y=560 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68590) HID_DEMO: X=-364 Y=351 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68640) HID_DEMO: X=-562 Y=365 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68690) HID_DEMO: X=-584 Y=488 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68740) HID_DEMO: X=-666 Y=317 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68790) HID_DEMO: X=-637 Y=262 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68840) HID_DEMO: X=-713 Y=440 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68890) HID_DEMO: X=-638 Y=412 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68940) HID_DEMO: X=-461 Y=319 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (68990) HID_DEMO: X=-366 Y=374 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69040) HID_DEMO: X=-294 Y=367 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69090) HID_DEMO: X=-377 Y=471 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69140) HID_DEMO: X=-402 Y=349 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69190) HID_DEMO: X=-307 Y=402 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69240) HID_DEMO: X=-438 Y=95 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (69290) HID_DEMO: X=-311 Y=468 x_delta=15 y_delta=-15 a=3[0m
+[0;32mI (69340) HID_DEMO: X=-1133 Y=-179 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (69390) HID_DEMO: X=-1289 Y=-327 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69440) HID_DEMO: X=-1313 Y=-194 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69490) HID_DEMO: X=-1524 Y=-161 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69540) HID_DEMO: X=-1532 Y=-110 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (69590) HID_DEMO: X=-1685 Y=-255 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69640) HID_DEMO: X=-1724 Y=-236 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69690) HID_DEMO: X=-1651 Y=-244 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69740) HID_DEMO: X=-1598 Y=-150 x_delta=45 y_delta=0 a=3[0m
+[0;32mI (69790) HID_DEMO: X=-1375 Y=-169 x_delta=45 y_delta=15 a=3[0m
+[0;32mI (69840) HID_DEMO: X=-1163 Y=-311 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (69890) HID_DEMO: X=-982 Y=-284 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (69940) HID_DEMO: X=-630 Y=-57 x_delta=15 y_delta=0 a=3[0m
+[0;32mI (69990) HID_DEMO: X=-161 Y=-181 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (70040) HID_DEMO: X=-365 Y=-151 x_delta=15 y_delta=15 a=3[0m
+[0;32mI (70090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70090) HID_DEMO: X=43 Y=-134 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70140) HID_DEMO: X=280 Y=-115 x_delta=-10 y_delta=0 a=2[0m
+[0;32mI (70190) HID_DEMO: X=478 Y=-157 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (70240) HID_DEMO: X=238 Y=-207 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (70290) HID_DEMO: X=417 Y=-271 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (70340) HID_DEMO: X=362 Y=257 x_delta=-15 y_delta=-15 a=3[0m
+[0;32mI (70390) HID_DEMO: X=352 Y=125 x_delta=-15 y_delta=0 a=3[0m
+[0;32mI (70440) HID_DEMO: X=343 Y=-475 x_delta=-15 y_delta=15 a=3[0m
+[0;32mI (70490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70490) HID_DEMO: X=-124 Y=29 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70540) HID_DEMO: X=-39 Y=-119 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70590) HID_DEMO: X=-36 Y=-17 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70640) HID_DEMO: X=-61 Y=-72 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70690) HID_DEMO: X=1 Y=-60 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70740) HID_DEMO: X=-60 Y=-61 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70790) HID_DEMO: X=-20 Y=-66 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70840) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70840) HID_DEMO: X=-52 Y=-59 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70890) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70890) HID_DEMO: X=-33 Y=-53 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70940) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70940) HID_DEMO: X=-52 Y=-56 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (70990) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (70990) HID_DEMO: X=-43 Y=-52 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71040) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71040) HID_DEMO: X=-66 Y=-61 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71090) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71090) HID_DEMO: X=-38 Y=-58 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71140) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71140) HID_DEMO: X=-54 Y=-49 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71190) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71190) HID_DEMO: X=-38 Y=-56 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71240) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71240) HID_DEMO: X=-54 Y=-44 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71290) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71290) HID_DEMO: X=-53 Y=-43 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71340) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71340) HID_DEMO: X=-46 Y=-49 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71390) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71390) HID_DEMO: X=-33 Y=-38 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71440) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71440) HID_DEMO: X=-34 Y=-60 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71490) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71490) HID_DEMO: X=-30 Y=-65 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71540) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71540) HID_DEMO: X=-39 Y=-59 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71590) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71590) HID_DEMO: X=-47 Y=-46 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71640) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71640) HID_DEMO: X=-70 Y=-38 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71690) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71690) HID_DEMO: X=-56 Y=-45 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71740) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71740) HID_DEMO: X=-52 Y=-51 x_delta=0 y_delta=0 a=1[0m
+[0;32mI (71790) HID_DEMO: MOUSE IS BEING PRESSED![0m
+[0;32mI (71790) HID_DEMO: X=-45 Y=-46 x_delta=0 y_delta=0 a=1[0m
