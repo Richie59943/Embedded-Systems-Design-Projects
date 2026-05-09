@@ -1,0 +1,2 @@
+source /home/richie/esp/CSE121_LABS/hello_world/build/gdbinit/symbols
+source /home/richie/esp/CSE121_LABS/hello_world/build/gdbinit/connect
