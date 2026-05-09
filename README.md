@@ -34,12 +34,12 @@ Welcome to my Embedded Systems Design repository. This repo contains labs, proje
 ## Tools & Technologies
 
 - C / C++
-- Verilog
 - ESP-IDF
-- Vivado
 - Git & GitHub
 - ESP32
-- FPGA Boards
+- DFROBOT BACKLIGHT MODULE
+- 3V Ultrasonic Sensor
+- Rasberry Pi
 
 ---
 
