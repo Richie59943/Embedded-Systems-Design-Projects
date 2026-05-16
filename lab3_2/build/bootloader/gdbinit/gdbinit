@@ -1,0 +1,2 @@
+source /home/richie/esp/CSE121_LABS/lab3_2/build/bootloader/gdbinit/symbols
+source /home/richie/esp/CSE121_LABS/lab3_2/build/bootloader/gdbinit/connect

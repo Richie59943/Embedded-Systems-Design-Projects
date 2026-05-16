@@ -1,6 +1,6 @@
-set(CMAKE_HOST_SYSTEM "Linux-6.19.14-300.fc44.x86_64")
+set(CMAKE_HOST_SYSTEM "Linux-7.0.4-200.fc44.x86_64")
 set(CMAKE_HOST_SYSTEM_NAME "Linux")
-set(CMAKE_HOST_SYSTEM_VERSION "6.19.14-300.fc44.x86_64")
+set(CMAKE_HOST_SYSTEM_VERSION "7.0.4-200.fc44.x86_64")
 set(CMAKE_HOST_SYSTEM_PROCESSOR "x86_64")
 
 include("/home/richie/esp/CSE121_LABS/lab4_3/build/toolchain/toolchain-esp32c3.cmake")

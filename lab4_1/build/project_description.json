@@ -1,7 +1,7 @@
 {
     "version":            "1.3",
     "project_name":       "hello_world",
-    "project_version":    "22653ab-dirty",
+    "project_version":    "fd3bf44-dirty",
     "project_path":       "/home/richie/esp/CSE121_LABS/lab4_1",
     "idf_path":           "/home/richie/esp/esp-idf",
     "build_dir":          "/home/richie/esp/CSE121_LABS/lab4_1/build",
