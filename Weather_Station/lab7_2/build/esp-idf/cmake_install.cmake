@@ -359,6 +359,16 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
+  include("/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_hal_i2c/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
+  include("/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_driver_i2c/cmake_install.cmake")
+endif()
+
+if(NOT CMAKE_INSTALL_LOCAL_ONLY)
+  # Include the install script for the subdirectory.
   include("/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/console/cmake_install.cmake")
 endif()
 

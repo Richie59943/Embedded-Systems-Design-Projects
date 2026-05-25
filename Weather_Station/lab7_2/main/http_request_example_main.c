@@ -23,9 +23,116 @@
 #include "lwip/dns.h"
 #include "sdkconfig.h"
 #include <stdio.h>
+
+// includes for the temp sensor 
+#include <stdint.h>
+#include "esp_err.h"
+#include "driver/i2c_master.h"
+#include "driver/gpio.h"
+#include "esp_check.h"
+
+//defining our I2C Communication
+#define I2C_MASTER_SCL_IO GPIO_NUM_8
+#define I2C_MASTER_SCA_IO GPIO_NUM_7
+#define I2C_MASTER_NUM I2C_NUM_0
+#define I2C_MASTER_FREQ_HZ 100000
+#define I2C_MASTER_TIMEOUT_MS 1000
+
+//this is the address of our sensor on board our esp32c3
+#define SHTC3_SENSOR_ADDR 0x70
+
+//SHTC3 Commnads
+static const uint8_t  sleep_cmd[2] = {0xB0,0x98};
+static const uint8_t  wake_cmd[2] = {0x35,0x17};
+static const uint8_t measure_cmd[2] = {0x78,0x66};
+
+ static esp_err_t shtc3_write_cmd(i2c_master_dev_handle_t dev_handle,const uint8_t *buff, size_t len)
+{
+	return i2c_master_transmit(
+			dev_handle,
+			buff,
+			len,
+			pdMS_TO_TICKS(I2C_MASTER_TIMEOUT_MS)
+			);
+}
+
+ static esp_err_t shtc3_read_cmd(i2c_master_dev_handle_t dev_handle, uint8_t *buff, size_t len)
+{
+	return i2c_master_receive(dev_handle,
+			buff,
+			len,
+			pdMS_TO_TICKS(I2C_MASTER_TIMEOUT_MS)
+			);
+}
+
+//this funciton is doing the check sum becuase out shtc3 sends 2 bytes of data then 1 of crc then 2 again an 1 checsome 
+//the msb and lsb are the two btes of eother hum or temp 
+static uint8_t shtc3_crc8(uint8_t msb, uint8_t lsb)
+{
+	uint8_t crc = 0xFF; //starts off at this value the datasheet says so 
+	uint8_t bytes[2]; //array that can hold 2 bytes
+	int i;
+	int j;
+
+	bytes[0] = msb;
+	bytes[1] = lsb;
+
+	for(i = 0; i < 2; i++)
+	{
+		crc = crc ^ bytes[i]; //xor
+		for(j = 0; j < 8; j++) //each bytes has 8 bits so checsk each bit
+		{
+		if((crc & 0x80) != 0) // this is checking if the left most crc is 1 
+		{
+			crc = (crc << 1) ^ 0x31;
+		}
+		else {
+			crc = (crc << 1);
+		}
+		}
+	}
+	return crc;
+}
+
+
+
+//this function is going to help up set up our i2c bus
+static void setup_i2c_bus(i2c_master_bus_handle_t *bus_handle)
+{
+	i2c_master_bus_config_t i2c_master_config = {
+		.clk_source = I2C_CLK_SRC_DEFAULT,
+		.i2c_port = I2C_MASTER_NUM,
+		.scl_io_num = I2C_MASTER_SCL_IO,
+		.sda_io_num = I2C_MASTER_SCA_IO,
+		.glitch_ignore_cnt = 7,
+		.flags.enable_internal_pullup = true,
+	};
+
+	ESP_ERROR_CHECK(i2c_new_master_bus(&i2c_master_config, bus_handle));
+
+}
+
+
+//this function is going to set up our device aka the SHTC3
+
+static void set_dev_config(i2c_master_dev_handle_t *dev_handle,i2c_master_bus_handle_t bus_handle) // we create dev handle with a pointer becuase we are trying to modify it and we no longer have a pointer to bus_handle because we just want the value 
+{
+	i2c_device_config_t dev_config = {
+	.dev_addr_length = I2C_ADDR_BIT_LEN_7,
+	.device_address = SHTC3_SENSOR_ADDR,
+	.scl_speed_hz = I2C_MASTER_FREQ_HZ,
+	};
+
+	ESP_ERROR_CHECK(i2c_master_bus_add_device(bus_handle, &dev_config, dev_handle));
+}
+
+
+
+
+
 /* Constants that aren't configurable in menuconfig */
 #define WEB_SERVER "172.20.10.10"
-#define WEB_PORT "8000"
+#define WEB_PORT "1234"
 #define WEB_PATH "/"
 
 static const char *TAG = "example";
@@ -39,21 +146,26 @@ static const char *TAG = "example";
 char request_buffer[600]; // our buffer 
 int length_of_mssg = 0; // this will hold the return value (size of buffer)
 char output[400];
-
+char temp[64];
+char hum[64];
 
 
 static void http_post_task(void *pvParameters)                                                                                          
 {
-  snprintf(output, sizeof(output),"Temperature is 65 degrees");
+i2c_master_dev_handle_t dev_handle =
+    (i2c_master_dev_handle_t) pvParameters;
 
-snprintf(request_buffer,sizeof(request_buffer),
-"POST " WEB_PATH " HTTP/1.0\r\n"
-"Host: "WEB_SERVER":"WEB_PORT"\r\n"
-"Content-Type: text/plain\r\n"
-"Content-Length: %zu\r\n"
-"User-Agent: esp-idf/1.0 esp32\r\n"
-"\r\n"
-"%s", strlen(output), output);
+    uint8_t data[6];
+
+    uint16_t raw_temp;
+    uint16_t raw_humidity;
+
+    uint8_t temp_crc;
+    uint8_t humidity_crc;
+
+    float temp_c;
+    float temp_f;
+    float humidity;
 
 
     const struct addrinfo hints = {
@@ -66,6 +178,65 @@ snprintf(request_buffer,sizeof(request_buffer),
     char recv_buf[64];
 
     while(1) {
+
+
+     ESP_ERROR_CHECK(shtc3_write_cmd(dev_handle,wake_cmd,sizeof(wake_cmd)));
+    vTaskDelay(pdMS_TO_TICKS(10));
+
+    ESP_ERROR_CHECK(shtc3_write_cmd(dev_handle,measure_cmd, sizeof(measure_cmd)));
+    vTaskDelay(pdMS_TO_TICKS(20));
+
+    ESP_ERROR_CHECK(shtc3_read_cmd(dev_handle,data, 6));
+    vTaskDelay(pdMS_TO_TICKS(10));
+
+    ESP_ERROR_CHECK(shtc3_write_cmd(dev_handle,sleep_cmd,sizeof(sleep_cmd)));
+    vTaskDelay(pdMS_TO_TICKS(20));
+
+
+
+    temp_crc = shtc3_crc8(data[0], data[1]);
+        humidity_crc = shtc3_crc8(data[3], data[4]);
+
+        if ((temp_crc != data[2]) || (humidity_crc != data[5])) 
+	{
+            printf("Sensor read failed\n");
+            vTaskDelay(pdMS_TO_TICKS(2000));
+            continue;
+	}
+ 
+
+        raw_temp = ((uint16_t)data[0] << 8) | data[1];
+        raw_humidity = ((uint16_t)data[3] << 8) | data[4];
+
+        temp_c = -45.0f + (175.0f * (float)raw_temp / 65536.0f);
+        temp_f = (temp_c * 9.0f / 5.0f) + 32.0f;
+        humidity = 100.0f * (float)raw_humidity / 65536.0f;
+
+      snprintf(output,sizeof(output),"Temp: %.2f C\n Humidity: %.2f%%", temp_c,humidity);
+
+snprintf(request_buffer,
+         sizeof(request_buffer),
+         "POST " WEB_PATH " HTTP/1.0\r\n"
+         "Host: " WEB_SERVER ":" WEB_PORT "\r\n"
+         "Content-Type: text/plain\r\n"
+         "Content-Length: %zu\r\n"
+         "User-Agent: esp-idf/1.0 esp32 curl\r\n"
+         "\r\n"
+         "%s",
+         strlen(output),
+         output);
+
+
+
+        
+
+
+    
+
+  
+  
+
+
         int err = getaddrinfo(WEB_SERVER, WEB_PORT, &hints, &res);
 
         if(err != 0 || res == NULL) {
@@ -141,6 +312,7 @@ snprintf(request_buffer,sizeof(request_buffer),
 
 void app_main(void)
 {
+  
     ESP_ERROR_CHECK( nvs_flash_init() );
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -151,5 +323,16 @@ void app_main(void)
      */
     ESP_ERROR_CHECK(example_connect());
 
-    xTaskCreate(&http_post_task, "http_post_task", 4096, NULL, 5, NULL);
+	i2c_master_bus_handle_t bus_handle;
+
+	i2c_master_dev_handle_t dev_handle;
+  
+  setup_i2c_bus(&bus_handle);
+  set_dev_config(&dev_handle,bus_handle);
+
+
+
+  
+    xTaskCreate(&http_post_task, "http_post_task", 4096, dev_handle, 5, NULL);
+  
 }

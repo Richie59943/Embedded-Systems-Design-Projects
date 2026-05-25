@@ -87,6 +87,8 @@
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_coex/cmake_install.cmake",
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_wifi/cmake_install.cmake",
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_wifi/remote/cmake_install.cmake",
+		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_hal_i2c/cmake_install.cmake",
+		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_driver_i2c/cmake_install.cmake",
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/console/cmake_install.cmake",
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_driver_spi/cmake_install.cmake",
 		"/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/esp-idf/esp_hal_ieee802154/cmake_install.cmake",
