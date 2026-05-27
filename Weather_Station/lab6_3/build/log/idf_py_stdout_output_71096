@@ -1,0 +1,250 @@
+Command: /home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python /home/richie/esp/esp-idf/tools/idf_monitor.py -p /dev/ttyACM0 -b 115200 --toolchain-prefix riscv32-esp-elf- --target esp32c3 --revision 3 --decode-panic backtrace /home/richie/esp/CSE121_LABS/Weather_Station/lab6_3/build/http_request.elf /home/richie/esp/CSE121_LABS/Weather_Station/lab6_3/build/bootloader/bootloader.elf -m '/home/richie/.espressif/python_env/idf6.1_py3.14_env/bin/python' '/home/richie/esp/esp-idf/tools/idf.py'
+[0;32mI (103) esp_image: segment 1: paddr=0002be58 vaddr=3fc91e00 sizeh: DetESP-ROM:esp32c3-eco7-20230720[0m
+Build:Jul 20 2023
+rst:0x15 (USB_UART_CHIP_RESET),boot:0xc (SPI_FAST_FLASH_BOOT)
+Saved PC:0x4004dc18
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fcd5830,len:0x155c
+load:0x403cbf10,len:0xd10
+load:0x403ce710,len:0x2fc0
+entry 0x403cbf1a
+[0;32mI (24) boot: ESP-IDF v6.1-dev-4427-gc00874869b 2nd stage bootloader[0m
+[0;32mI (24) boot: compile time May 27 2026 15:42:48[0m
+[0;32mI (25) boot: chip revision: v1.1[0m
+[0;32mI (26) boot: efuse block revision: v1.3[0m
+[0;32mI (30) boot.esp32c3: SPI Speed      : 80MHz[0m
+[0;32mI (34) boot.esp32c3: SPI Mode       : DIO[0m
+[0;32mI (37) boot.esp32c3: SPI Flash Size : 2MB[0m
+[0;32mI (41) boot: Enabling RNG early entropy source...[0m
+[0;32mI (46) boot: Partition Table:[0m
+[0;32mI (48) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (54) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (61) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (67) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (74) boot: End of partition table[0m
+[0;32mI (77) esp_image: segment 0: paddr=00010020 vaddr=3c0a0020 size=1be30h (114224) map[0m
+[0;32mI (103) esp_image: segment 1: paddr=0002be58 vaddr=3fc91e00 size=03468h ( 13416) load[0m
+[0;32mI (105) esp_image: segment 2: paddr=0002f2c8 vaddr=40380000 size=00d50h (  3408) load[0m
+[0;32mI (107) esp_image: segment 3: paddr=00030020 vaddr=42000020 size=9f4dch (652508) map[0m
+[0;32mI (216) esp_image: segment 4: paddr=000cf504 vaddr=40380d50 size=10ff0h ( 69616) load[0m
+[0;32mI (228) esp_image: segment 5: paddr=000e04fc vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (234) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (234) boot: Disabling RNG early entropy source...[0m
+[0;32mI (246) cpu_start: Unicore app[0m
+[0;32mI (254) cpu_start: GPIO 20 and 21 are used as console UART I/O pins[0m
+[0;32mI (255) cpu_start: Pro cpu start user code[0m
+[0;32mI (255) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (257) app_init: Application information:[0m
+[0;32mI (260) app_init: Project name:     http_request[0m
+[0;32mI (265) app_init: App version:      8138f6c-dirty[0m
+[0;32mI (269) app_init: Compile time:     May 27 2026 15:44:12[0m
+[0;32mI (274) app_init: ELF file SHA256:  2e19b5730...[0m
+[0;32mI (278) app_init: ESP-IDF:          v6.1-dev-4427-gc00874869b[0m
+[0;32mI (284) efuse_init: Min chip rev:     v0.3[0m
+[0;32mI (288) efuse_init: Max chip rev:     v1.99 [0m
+[0;32mI (292) efuse_init: Chip rev:         v1.1[0m
+[0;32mI (296) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (302) heap_init: At 3FC9A470 len 00025B90 (150 KiB): RAM[0m
+[0;32mI (307) heap_init: At 3FCC0000 len 0001C710 (113 KiB): Retention RAM[0m
+[0;32mI (313) heap_init: At 3FCDC710 len 0000294C (10 KiB): Retention RAM[0m
+[0;32mI (319) heap_init: At 50000024 len 00001FC4 (7 KiB): RTCRAM[0m
+[0;32mI (325) spi_flash: detected chip: generic[0m
+[0;32mI (328) spi_flash: flash io: dio[0m
+[0;33mW (331) spi_flash: Detected size(4096k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (344) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (350) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (357) main_task: Started on CPU0[0m
+[0;32mI (357) main_task: Calling app_main()[0m
+[0;32mI (367) example_connect: Start example_connect.[0m
+[0;32mI (367) pp: pp rom version: 74f9620[0m
+[0;32mI (367) net80211: net80211 rom version: 74f9620[0m
+[0;32mI (377) wifi:wifi driver task: 3fca2834, prio:23, stack:6656, core=0[0m
+[0;32mI (377) wifi:wifi firmware version: 4aaf952[0m
+[0;32mI (377) wifi:wifi certification version: v7.0[0m
+[0;32mI (387) wifi:config NVS flash: enabled[0m
+[0;32mI (387) wifi:config nano formatting: disabled[0m
+[0;32mI (387) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (397) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (397) wifi:Init management short buffer num: 32[0m
+[0;32mI (407) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (407) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (417) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (417) wifi:Init static rx buffer num: 10[0m
+[0;32mI (417) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (427) wifi_init: rx ba win: 6[0m
+[0;32mI (427) wifi_init: accept mbox: 6[0m
+[0;32mI (427) wifi_init: tcpip mbox: 32[0m
+[0;32mI (437) wifi_init: udp mbox: 6[0m
+[0;32mI (437) wifi_init: tcp mbox: 6[0m
+[0;32mI (437) wifi_init: tcp tx win: 5760[0m
+[0;32mI (447) wifi_init: tcp rx win: 5760[0m
+[0;32mI (447) wifi_init: tcp mss: 1440[0m
+[0;32mI (447) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (457) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (457) phy_init: phy_version 1232,d493f299,Aug 25 2025,19:01:20[0m
+[0;32mI (497) wifi:mode : sta (b0:a6:04:6d:24:d4)[0m
+[0;32mI (497) wifi:enable tsf[0m
+[0;32mI (497) example_connect: Connecting to Ricardo...[0m
+[0;33mW (497) wifi:Password length matches WPA2 standards, authmode threshold changes from OPEN to WPA2[0m
+[0;32mI (507) example_connect: Waiting for IP(s)[0m
+[0;32mI (2987) wifi:new:<6,0>, old:<1,0>, ap:<255,255>, sta:<6,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (2987) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (3037) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (3047) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (3137) wifi:connected with Ricardo, aid = 13, channel 6, BW20, bssid = b2:8f:8d:99:93:5d[0m
+[0;32mI (3137) wifi:security: WPA2-PSK, phy: bgn, rssi: -42, cipher(pairwise:0x3, group:0x3), pmf:0[0m
+[0;32mI (3147) wifi:pm start, type: 1[0m
+
+[0;32mI (3147) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (3157) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (3167) wifi:<ba-add>idx:0 (ifx:0, b2:8f:8d:99:93:5d), tid:0, ssn:2868, winSize:64[0m
+[0;32mI (3167) wifi:<ba-add>idx:1 (ifx:0, b2:8f:8d:99:93:5d), tid:6, ssn:933, winSize:64[0m
+[0;32mI (3197) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4217) esp_netif_handlers: example_netif_sta ip: 172.20.10.11, mask: 255.255.255.240, gw: 172.20.10.1[0m
+[0;32mI (4217) example_connect: Got IPv4 event: Interface "example_netif_sta" address: 172.20.10.11[0m
+[0;32mI (4367) example_connect: Got IPv6 event: Interface "example_netif_sta" address: fe80:0000:0000:0000:b2a6:04ff:fe6d:24d4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4367) example_common: Connected to example_netif_sta[0m
+[0;32mI (4367) example_common: - IPv4 address: 172.20.10.11,[0m
+[0;32mI (4377) example_common: - IPv6 address: fe80:0000:0000:0000:b2a6:04ff:fe6d:24d4, type: ESP_IP6_ADDR_IS_LINK_LOCAL[0m
+[0;32mI (4387) example: DNS lookup succeeded. IP=172.20.10.10[0m
+[0;32mI (4387) example: ... allocated socket[0m
+[0;32mI (4397) main_task: Returned from app_main()[0m
+[0;32mI (4467) example: ... connected[0m
+[0;32mI (4467) example: ... socket send success[0m
+[0;32mI (4467) example: ... set socket receiving timeout success[0m
+HTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:49:57 GMT
+Content-Type: text/plain
+Content-Length: 10
+
+Santa CruzBody: Santa Cruz
+[0;32mI (4497) example: ... done reading from socket. Last read return=0 errno=128.[0m
+[0;32mI (4507) example: 10... [0m
+[0;32mI (5507) example: 9... [0m
+[0;32mI (6507) example: 8... [0m
+[0;32mI (7507) example: 7... [0m
+[0;32mI (8507) example: 6... [0m
+[0;32mI (9507) example: 5... [0m
+[0;32mI (10507) example: 4... [0m
+[0;32mI (11367) example_connect: Got IPv6 event: Interface "example_netif_sta" address: 2600:0381:5b1b:d4c3:b2a6:04ff:fe6d:24d4, type: ESP_IP6_ADDR_IS_GLOBAL[0m
+[0;32mI (11507) example: 3... [0m
+[0;32mI (12507) example: 2... [0m
+[0;32mI (13507) example: 1... [0m
+[0;32mI (14507) example: 0... [0m
+[0;32mI (15507) example: Starting again![0m
+Server Location: Santa Cruz
+Formated location: Santa+Cruz
+[0;32mI (15807) example: DNS lookup succeeded. IP=5.9.243.187[0m
+[0;32mI (15807) example: ... allocated socket[0m
+[0;32mI (15847) example: ... connected[0m
+[0;32mI (15847) example: ... socket send success[0m
+[0;32mI (15847) example: ... set socket receiving timeout success[0m
+HTTP/1.0 200 OK
+Access-Control-Allow-Origin: *
+Cache-Control: public, max-age=600
+Content-Type: text/plain; charset=utf-8
+Date: Wed, 27 May 2026 22:50:08 GMT
+Content-Length: 6
+
++65°FOutside Temp: +65°F
+[0;32mI (16487) example: DNS lookup succeeded. IP=172.20.10.10[0m
+[0;32mI (16487) example: ... allocated socket[0m
+[0;32mI (16627) example: ... connected[0m
+[0;32mI (16627) example: ... socket send success[0m
+[0;32mI (16627) example: ... set socket receiving timeout success[0m
+HTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:50:09 GMT
+Content-Type: text/plain
+Content-Length: 13
+
+POST receivedI (16657) example: ... done reading from socket. Last read return=0 errno=128.
+[0;32mI (16667) example: 10... [0m
+[0;32mI (17667) example: 9... [0m
+[0;32mI (18667) example: 8... [0m
+[0;32mI (19667) example: 7... [0m
+[0;32mI (20667) example: 6... [0m
+[0;32mI (21667) example: 5... [0m
+[0;32mI (22667) example: 4... [0m
+[0;32mI (23667) example: 3... [0m
+[0;32mI (24667) example: 2... [0m
+[0;32mI (25667) example: 1... [0m
+[0;32mI (26667) example: 0... [0m
+[0;32mI (27667) example: Starting again![0m
+[0;32mI (27667) example: DNS lookup succeeded. IP=172.20.10.10[0m
+[0;32mI (27667) example: ... allocated socket[0m
+[0;32mI (27887) example: ... connected[0m
+[0;32mI (27887) example: ... socket send success[0m
+[0;32mI (27887) example: ... set socket receiving timeout success[0m
+HTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:50:20 GMT
+Content-Type: text/plain
+Content-Length: 10
+
+Santa CruzBody: Santa CruzHTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:50:20 GMT
+Content-Type: text/plain
+Content-Length: 10
+
+Santa Cruz
+[0;32mI (28117) example: ... done reading from socket. Last read return=0 errno=128.[0m
+[0;32mI (28127) example: 10... [0m
+[0;32mI (29127) example: 9... [0m
+[0;32mI (30127) example: 8... [0m
+[0;32mI (31127) example: 7... [0m
+[0;32mI (32127) example: 6... [0m
+[0;32mI (33127) example: 5... [0m
+[0;32mI (34127) example: 4... [0m
+[0;32mI (35127) example: 3... [0m
+[0;32mI (36127) example: 2... [0m
+[0;32mI (37127) example: 1... [0m
+[0;32mI (38127) example: 0... [0m
+[0;32mI (39127) example: Starting again![0m
+Server Location: Santa CruzHTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:50:20 GMT
+Formated location: Santa+CruzHTTP/1.0+200+OK
+Server:+BaseHTTP/0.6+Python/3.14.4
+Date:+Wed,+27+May+2026+22:50:20+GMT
+[0;32mI (39137) example: DNS lookup succeeded. IP=5.9.243.187[0m
+[0;32mI (39137) example: ... allocated socket[0m
+[0;32mI (39197) example: ... connected[0m
+[0;32mI (39197) example: ... socket send success[0m
+[0;32mI (39197) example: ... set socket receiving timeout success[0m
+HTTP/1.1 400 Bad Request
+Content-Type: text/html
+Content-Length: 138
+
+<html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Request</h1></center>
+</body>
+</html>
+Outside Temp: <html>
+<head><title>400 Bad Request</title></head>
+<body bgcolor="white">
+<center><h1>400 Bad Re
+[0;32mI (39427) example: DNS lookup succeeded. IP=172.20.10.10[0m
+[0;32mI (39427) example: ... allocated socket[0m
+[0;32mI (39757) example: ... connected[0m
+[0;32mI (39757) example: ... socket send success[0m
+[0;32mI (39757) example: ... set socket receiving timeout success[0m
+HTTP/1.0 200 OK
+Server: BaseHTTP/0.6 Python/3.14.4
+Date: Wed, 27 May 2026 22:50:32 GMT
+Content-Type: text/plain
+Content-Length: 13
+
+POST receivedI (39977) example: ... done reading from socket. Last read return=0 errno=128.
+[0;32mI (39987) example: 10... [0m
+[0;32mI (40987) example: 9... [0m
+[0;32mI (41987) example: 8... [0m
+[0;32mI (42987) example: 7... [0m
+[0;32mI (43987) example: 6... [0m
+[0;32mI (44987) example: 5... [0m
+[0;32mI (45987) example: 4... [0m

@@ -1,4 +1,0 @@
-"-specs=/home/richie/esp/CSE121_LABS/Weather_Station/lab7_2/build/bootloader/specs/picolibc.specs"
--march=rv32imc_zicsr_zifencei
--mtune=esp-base
--fno-rtti
