@@ -153,7 +153,13 @@ char output[400];
 char temp[64];
 char hum[64];
 
-static void http_get_task(void *pvParameters)
+char http_responce_copy[1000]; //this is where we will keep a copy of out http responce in order to take out the body
+int responce_index =0; // hold out place in for loop 
+//
+
+
+void get_location_from_server(char *location, size_t location_size)
+//static void http_get_task(void *pvParameters)
 {
   const struct addrinfo hints = {
         .ai_family = AF_INET,
@@ -164,16 +170,13 @@ static void http_get_task(void *pvParameters)
     int s, r;
     char recv_buf[64];
 
-    while(1) {
-
-
+   
         int err = getaddrinfo(WEB_SERVER, WEB_PORT, &hints, &res);
 
         if(err != 0 || res == NULL) {
             ESP_LOGE(TAG, "DNS lookup failed err=%d res=%p", err, res);
             vTaskDelay(1000 / portTICK_PERIOD_MS);
-            continue;
-        }
+                    }
 
         /* Code to print the resolved IP.
 
@@ -186,7 +189,6 @@ static void http_get_task(void *pvParameters)
             ESP_LOGE(TAG, "... Failed to allocate socket.");
             freeaddrinfo(res);
             vTaskDelay(1000 / portTICK_PERIOD_MS);
-            continue;
         }
         ESP_LOGI(TAG, "... allocated socket");
 
@@ -195,7 +197,6 @@ static void http_get_task(void *pvParameters)
             close(s);
             freeaddrinfo(res);
             vTaskDelay(4000 / portTICK_PERIOD_MS);
-            continue;
         }
 
         ESP_LOGI(TAG, "... connected");
@@ -205,7 +206,7 @@ static void http_get_task(void *pvParameters)
             ESP_LOGE(TAG, "... socket send failed");
             close(s);
             vTaskDelay(4000 / portTICK_PERIOD_MS);
-            continue;
+
         }
         ESP_LOGI(TAG, "... socket send success");
 
@@ -217,7 +218,7 @@ static void http_get_task(void *pvParameters)
             ESP_LOGE(TAG, "... failed to set socket receiving timeout");
             close(s);
             vTaskDelay(4000 / portTICK_PERIOD_MS);
-            continue;
+
         }
         ESP_LOGI(TAG, "... set socket receiving timeout success");
 
@@ -226,9 +227,27 @@ static void http_get_task(void *pvParameters)
             bzero(recv_buf, sizeof(recv_buf));
             r = read(s, recv_buf, sizeof(recv_buf)-1);
             for(int i = 0; i < r; i++) {
+                //we are going to store the http request the entire thing
+                http_responce_copy[responce_index] = recv_buf[i];
+
                 putchar(recv_buf[i]);
+                responce_index++; //going to help us move along our http request 
             }
-        } while(r > 0);
+                 } while(r > 0);
+
+
+    http_responce_copy[responce_index] = '\0'; // so that it is a proper C string
+
+      char *body_start = strstr(http_responce_copy,"\r\n\r\n"); // this makes sure our body_start now holds the first  interation of \r\n\r\n
+
+      if(body_start != NULL)
+    {
+      body_start = body_start + 4;
+
+    snprintf(location, location_size,"%s",body_start);
+      printf("Body: %s\n", body_start);
+    }
+
 
         ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d.", r, errno);
         close(s);
@@ -237,7 +256,7 @@ static void http_get_task(void *pvParameters)
             vTaskDelay(1000 / portTICK_PERIOD_MS);
         }
         ESP_LOGI(TAG, "Starting again!");
-    }
+    
 }
 
 
@@ -246,6 +265,8 @@ static void http_get_task(void *pvParameters)
 
 static void http_post_task(void *pvParameters)                                                                                          
 {
+  char location[100]; // yhis is going to hold out location 
+
 i2c_master_dev_handle_t dev_handle =
     (i2c_master_dev_handle_t) pvParameters;
 
@@ -272,7 +293,9 @@ i2c_master_dev_handle_t dev_handle =
     char recv_buf[64];
 
     while(1) {
-
+      
+    get_location_from_server(location,sizeof(location));
+    printf("Server Location: %s\n", location);
 
      ESP_ERROR_CHECK(shtc3_write_cmd(dev_handle,wake_cmd,sizeof(wake_cmd)));
     vTaskDelay(pdMS_TO_TICKS(10));
@@ -393,6 +416,7 @@ snprintf(request_buffer,
                 putchar(recv_buf[i]);
             }
         } while(r > 0);
+      
 
         ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d.", r, errno);
         close(s);
@@ -406,7 +430,6 @@ snprintf(request_buffer,
 
 void app_main(void)
 {
-  
     ESP_ERROR_CHECK( nvs_flash_init() );
     ESP_ERROR_CHECK(esp_netif_init());
     ESP_ERROR_CHECK(esp_event_loop_create_default());
@@ -427,7 +450,7 @@ void app_main(void)
 
 
   
-  xTaskCreate(&http_get_task,"http_get_task", 4096,NULL,5,NULL);
+
   xTaskCreate(&http_post_task, "http_post_task", 4096, dev_handle, 5, NULL);
   
 }

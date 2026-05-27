@@ -24,7 +24,7 @@
 #include "sdkconfig.h"
 
 /* Constants that aren't configurable in menuconfig */
-#define WEB_SERVER "169.233.223.28"
+#define WEB_SERVER "wttr.in"
 #define WEB_PORT "8000"
 #define WEB_PATH "/"
 
