@@ -139,6 +139,13 @@ static void set_dev_config(i2c_master_dev_handle_t *dev_handle,i2c_master_bus_ha
 #define WEB_PORT_GET "1234"
 #define WEB_PATH_GET "/location"
 
+//defining paths for wttr request
+#define WEB_SERVER_WTTR "wttr.in"
+#define WEB_PORT_WTTR "80"
+#define WEB_PATH_WTTR "/"
+
+
+
 static const char *TAG = "example";
 
 static const char *REQUEST = "GET " WEB_PATH_GET " HTTP/1.0\r\n"
@@ -146,8 +153,14 @@ static const char *REQUEST = "GET " WEB_PATH_GET " HTTP/1.0\r\n"
     "User-Agent: esp-idf/1.0 esp32\r\n"
     "\r\n";
 
+//request for the wttr.in 
+static const char *WTTR_REQUEST = "GET " WEB_PATH_WTTR "HTTP/1.0\r\n"
+    "Host: "WEB_SERVER_WTTR":"WEB_PORT_WTTR"\r\n"
+    "User-Agent: esp-idf/1.0 esp32 curl\r\n"
+  "\r\n";
 
 char request_buffer[600]; // our buffer 
+char wttr_request[100];
 int length_of_mssg = 0; // this will hold the return value (size of buffer)
 char output[400];
 char temp[64];
@@ -156,6 +169,137 @@ char hum[64];
 char http_responce_copy[1000]; //this is where we will keep a copy of out http responce in order to take out the body
 int responce_index =0; // hold out place in for loop 
 //
+
+void get_location_formatted(char *location, char *new_formatted_location)
+{
+  int i;
+  //takes in our location 
+  for(i =0; i < strlen(location);i++)
+  {
+    //iterates throuhg untill it finds the place
+    if(location[i] == ' ')
+    {
+      //in our new array we place the + instead of the " "
+      new_formatted_location[i] = '+';
+    }else{
+      // if not we just keep passing from one array into another 
+      new_formatted_location[i] = location[i];
+    }
+   
+  }
+  //we add the \o in order for it to be a actuall c string 
+  new_formatted_location[i] = '\0';
+
+}
+
+void get_outdoor_temp(char *new_formatted_location, char *outdoor_temp, size_t outdoor_temp_size)
+{
+  char http_responce_copy_temp[500];
+  char get_request_temp[900];
+  int responce_index_temp =0;
+  snprintf(get_request_temp, sizeof(get_request_temp),"GET /%s?format=%%t HTTP/1.0\r\n"
+           "Host: "WEB_SERVER_WTTR":"WEB_PORT_WTTR"\r\n"
+           "User-Agent: esp-idf/1.0 esp32 curl\r\n"
+           "\r\n",new_formatted_location);
+
+
+//http server code 
+   const struct addrinfo hints = {
+        .ai_family = AF_INET,
+        .ai_socktype = SOCK_STREAM,
+    };
+    struct addrinfo *res;
+    struct in_addr *addr;
+    int s, r;
+    char recv_buf[64];
+
+   
+        int err = getaddrinfo(WEB_SERVER_WTTR, WEB_PORT_WTTR, &hints, &res);
+
+        if(err != 0 || res == NULL) {
+            ESP_LOGE(TAG, "DNS lookup failed err=%d res=%p", err, res);
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+                    }
+
+        /* Code to print the resolved IP.
+
+           Note: inet_ntoa is non-reentrant, look at ipaddr_ntoa_r for "real" code */
+        addr = &((struct sockaddr_in *)res->ai_addr)->sin_addr;
+        ESP_LOGI(TAG, "DNS lookup succeeded. IP=%s", inet_ntoa(*addr));
+
+        s = socket(res->ai_family, res->ai_socktype, 0);
+        if(s < 0) {
+            ESP_LOGE(TAG, "... Failed to allocate socket.");
+            freeaddrinfo(res);
+            vTaskDelay(1000 / portTICK_PERIOD_MS);
+            return;
+        }
+        ESP_LOGI(TAG, "... allocated socket");
+
+        if(connect(s, res->ai_addr, res->ai_addrlen) != 0) {
+            ESP_LOGE(TAG, "... socket connect failed errno=%d", errno);
+            close(s);
+            freeaddrinfo(res);
+            vTaskDelay(4000 / portTICK_PERIOD_MS);
+            return;
+        }
+
+        ESP_LOGI(TAG, "... connected");
+        freeaddrinfo(res);
+
+        if (write(s,get_request_temp, strlen(get_request_temp)) < 0) {
+            ESP_LOGE(TAG, "... socket send failed");
+            close(s);
+            vTaskDelay(4000 / portTICK_PERIOD_MS);
+            return;
+
+        }
+        ESP_LOGI(TAG, "... socket send success");
+
+        struct timeval receiving_timeout;
+        receiving_timeout.tv_sec = 5;
+        receiving_timeout.tv_usec = 0;
+        if (setsockopt(s, SOL_SOCKET, SO_RCVTIMEO, &receiving_timeout,
+                sizeof(receiving_timeout)) < 0) {
+            ESP_LOGE(TAG, "... failed to set socket receiving timeout");
+            close(s);
+            vTaskDelay(4000 / portTICK_PERIOD_MS);
+
+        }
+        ESP_LOGI(TAG, "... set socket receiving timeout success");
+
+        /* Read HTTP response */
+        do {
+            bzero(recv_buf, sizeof(recv_buf));
+            r = read(s, recv_buf, sizeof(recv_buf)-1);
+            for(int i = 0; i < r; i++) {
+                //we are going to store the http request the entire thing
+                http_responce_copy_temp[responce_index_temp] = recv_buf[i];
+
+                putchar(recv_buf[i]);
+                responce_index_temp++; //going to help us move along our http request 
+            }
+                 } while(r > 0);
+
+
+    
+  http_responce_copy_temp[responce_index_temp] = '\0';
+  
+  char *body_temp = strstr(http_responce_copy_temp,"\r\n\r\n");
+
+  if(body_temp != NULL)
+  {
+    body_temp = body_temp + 4;
+
+    snprintf(outdoor_temp,outdoor_temp_size, "%s",body_temp);
+
+    printf("Outside Temp: %s\n", outdoor_temp);
+
+  }
+  
+}
+
+
 
 
 void get_location_from_server(char *location, size_t location_size)
@@ -238,15 +382,15 @@ void get_location_from_server(char *location, size_t location_size)
 
     http_responce_copy[responce_index] = '\0'; // so that it is a proper C string
 
-      char *body_start = strstr(http_responce_copy,"\r\n\r\n"); // this makes sure our body_start now holds the first  interation of \r\n\r\n
+  char  *body_start = strstr(http_responce_copy,"\r\n\r\n");
 
       if(body_start != NULL)
     {
       body_start = body_start + 4;
 
-    snprintf(location, location_size,"%s",body_start);
-      printf("Body: %s\n", body_start);
-    }
+      snprintf(location, location_size,"%s",body_start); // this is going to put the body into the location array
+         }
+ printf("Body: %s\n", body_start);
 
 
         ESP_LOGI(TAG, "... done reading from socket. Last read return=%d errno=%d.", r, errno);
@@ -265,7 +409,10 @@ void get_location_from_server(char *location, size_t location_size)
 
 static void http_post_task(void *pvParameters)                                                                                          
 {
+  char outdoor_temp[100]; // this is going to store our outside temp 
   char location[100]; // yhis is going to hold out location 
+
+  char new_formatted_location[100];
 
 i2c_master_dev_handle_t dev_handle =
     (i2c_master_dev_handle_t) pvParameters;
@@ -296,6 +443,14 @@ i2c_master_dev_handle_t dev_handle =
       
     get_location_from_server(location,sizeof(location));
     printf("Server Location: %s\n", location);
+
+    get_location_formatted(location,new_formatted_location);
+    
+    printf("Formated location: %s\n",new_formatted_location);
+
+
+    get_outdoor_temp(new_formatted_location,outdoor_temp,sizeof(outdoor_temp));
+    
 
      ESP_ERROR_CHECK(shtc3_write_cmd(dev_handle,wake_cmd,sizeof(wake_cmd)));
     vTaskDelay(pdMS_TO_TICKS(10));
@@ -329,7 +484,13 @@ i2c_master_dev_handle_t dev_handle =
         temp_f = (temp_c * 9.0f / 5.0f) + 32.0f;
         humidity = 100.0f * (float)raw_humidity / 65536.0f;
 
-      snprintf(output,sizeof(output),"Temp: %.2f C\n Humidity: %.2f%%", temp_c,humidity);
+      snprintf(output,sizeof(output),"\nLocation: %s\nOutdoor Temp: %s\nESP32 Sensor Temp: %.2f C\nESP32 Sensor Humidity: %.2f%%",
+               location,
+               outdoor_temp,
+               temp_c,
+               humidity);
+    
+
 
 snprintf(request_buffer,
          sizeof(request_buffer),
@@ -446,10 +607,6 @@ void app_main(void)
   
   setup_i2c_bus(&bus_handle);
   set_dev_config(&dev_handle,bus_handle);
-
-
-
-  
 
   xTaskCreate(&http_post_task, "http_post_task", 4096, dev_handle, 5, NULL);
   
